@@ -7,15 +7,15 @@
 
 | Student No. | Full Name | GitHub Username | Contribution (sum to 100%) | 
 |-------------|-----------|-----------------|----------------------------|
-| s111111     | Full name | xxx             | 33.3% or Equal             |
+| s5302345 | Hartono Susanto | hartonoosu | 33.3% or Equal             |
 | s222222     | Full name | xxx             | 33.3% or Equal             | 
 | s333333     | Full name | xxx             | 33.3% or Equal             | 
 
 ### Brief Description of Contribution
 
 Please Describe what you have accomplished in this group project.
-- s111111, Full name
-  - Accomplishments: Describe what you have completed or achieved
+- s5302345, Hartono Susanto
+  - Accomplishments: Created a repository for this project.
 - s222222, Full name
   - Accomplishments: Describe what you have completed or achieved
 - s333333, full name
