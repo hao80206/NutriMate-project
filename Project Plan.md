@@ -45,7 +45,9 @@ Please Describe what you have accomplished in this group project.
 
 ### 1.1 Project Objectives
 
-Establish objectives or goals that the project aims to achieve.
+The project is focused on creating a user-friendly graphical interface for the Nutritional Food Database. This interface makes it easier for users to access and understand detailed nutritional information. It features advanced search tools that allow users to filter and analyze data based on food type, nutrient content, and nutritional density. These tools help users get the specific information they need for informed dietary decisions.
+
+Additionally, the project includes visual aids like pie charts and bar graphs to clearly show the nutritional breakdown of foods. This visual approach helps users understand the data better, supporting informed choices about their diet. The tool also serves as a valuable resource for dietitians, researchers, and educators, improving dietary planning and nutritional education. By making nutritional information easy to access and understand, the tool encourages healthier eating habits, aiming to enhance public health outcomes.
 
 ### 1.2 Project Stakeholders
 
