@@ -45,11 +45,27 @@ Please Describe what you have accomplished in this group project.
 
 ### 1.1 Project Objectives
 
-Establish objectives or goals that the project aims to achieve.
+The project is focused on creating a user-friendly graphical interface for the Nutritional Food Database. This interface makes it easier for users to access and understand detailed nutritional information. It features advanced search tools that allow users to filter and analyze data based on food type, nutrient content, and nutritional density. These tools help users get the specific information they need for informed dietary decisions.
+
+Additionally, the project includes visual aids like pie charts and bar graphs to clearly show the nutritional breakdown of foods. This visual approach helps users understand the data better, supporting informed choices about their diet. The tool also serves as a valuable resource for dietitians, researchers, and educators, improving dietary planning and nutritional education. By making nutritional information easy to access and understand, the tool encourages healthier eating habits, aiming to enhance public health outcomes.
 
 ### 1.2 Project Stakeholders
 
-Identify all key stakeholders involved in the project, including internal teams and potential end-users.
+**Internal Stakeholders:**
+* Company Executives oversee the project to ensure it aligns with the company’s goals. They focus on how the project can improve the company’s performance and reputation.
+
+* Programmers and Designers work on building the software. They combine technical expertise with creative design (UI/UX )to ensure the tool is both effective and appealing.
+
+* Marketing Team works to get the tool noticed. They create campaigns that explain the benefits of the tool to attract and keep users.
+
+* Quality Assurance Team tests the software thoroughly to make sure this tool works perfectly and meets all user needs before it goes live.
+
+**Potential End-Users:**
+* Dietitians, Nutritionists, and Healthcare Professionals use the tool to get accurate nutritional information, which helps them give better advice to their clients and patients.
+
+* Researchers and Educators use the tool to enrich their academic and educational projects. It provides them with a reliable source of nutritional data that enhances learning and research activities.
+
+* The General Public includes anyone interested in learning more about their food choices. The tool provides them with clear nutritional information, helping them make healthier decisions.
 
 ### 1.3 Project Scope
 
@@ -59,7 +75,7 @@ Define and manage what is included or excluded in the project and product.
 
 Include the Work Breakdown Structure (WBS) for the entire project. WBS should be presented as a hierarchical diagram. Use the elements from the WBS to define activities in Section 3, and schedule these activities in the Gantt Chart in Section 4. Ensure all project activities are considered and included in the WBS.
 
-![WBS](./WBS.jpg)
+![WBS](./WBS.png)
 
 ## 3. Activity Definition Estimation
 
