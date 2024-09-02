@@ -83,28 +83,28 @@ Define the activities required for your project based on the WBS, and assign res
 
 | Activity #No | Activity Name                       | Brief Description                                                                                                      | Duration | Responsible Team Members |
 |--------------|-------------------------------------|------------------------------------------------------------------------------------------------------------------------|----------|--------------------------|
-| 1.1          | Assign Project Manager              | Appoint a qualified individual to over see the project's execution and ensure its success                              | xxx      | xxx \& yyy               |
-| 1.2          | Develop Project Charter             | Create a formal document outlining the project objectives, scope, stakeholders, and authority                          | xxx      | All                      |
-| 1.3          | Meet Stake Holders                  | Organize initial meetings with stakeholders to gather input and set expectations                                       | xxx      | xxx                      |
-| 2.1          | Collect Requirement                 | Gather and document detailed requirements from stakeholders for the project deliverables.                              | xxx      | xxx \& yyy               |
-| 2.2          | Establish Scope Plan                | Define and document the project scope, including objectives, deliverables, and constraints.                            | xxx      | All                      |
-| 2.3          | Create WBS                          | Develop a Work Breakdown Structure (WBS) to break down the project into manageable tasks.                              | xxx      | xxx                      |
-| 2.4          | Create Procurement Plan             | Develop a plan for acquiring goods and services from external suppliers                                                | xxx      | xxx \& yyy               |
-| 2.5          | Create Gantt Chart                  | Develop a Gantt Chart to visually represent the project schedule and timeline                                          | xxx      | All                      |
-| 2.6          | Estimate Activity Resources & Cost  | Assess the resources and budget needed for each activity to ensure effective allocation and cost management            | xxx      | xxx                      |
-| 3.1          | Develop Front-End interface         | Design and build the user-interface, focusing on usability and accessibility for diverse end-users                     | xxx      | xxx \& yyy               |
-| 3.2          | Develop Back-End interface          | Create the server-side logic, databases, and APIs to support the front-end interface and overall functionality         | xxx      | All                      |
-| 3.3          | Integrate features                  | Combine Front-End and Back-End components to ensure seamless, cohesive user experience                                 | xxx      | xxx                      |
-| 3.4          | Quality Assurance & Testing         | Perform through testing to validate that the tool meets all specifications amd quality standards                       | xxx      | xxx \& yyy               |
-| 3.5          | Deployment                          | Deploy the completed tool the production environment for use by all stakeholders and end-users                         | xxx      | All                      |
-| 4.1          | Monitor Project Work                | Continuously track and assess project activities to ensure alignment with the project plan and scope                   | xxx      | xxx                      |
-| 4.2          | Control Scope                       | Manage changes to the project scope to avoid scope creep and maintain focus on key objectives                          | xxx      | xxx \& yyy               |
-| 4.3          | Control Schedule                    | Oversee the project timeline to ensure all tasks are completed within the designated timeframe                         | xxx      | All                      |
-| 4.4          | Control Resources & Cost            | Monitor and adjust resource usage and expenses to keep the project within budget                                       | xxx      | xxx                      |
-| 4.5          | Perform Quality Control             | Conduct reviews and inspections to ensure that project deliverables meet defined quality criteria                      | xxx      | xxx                      |
-| 4.6          | Report Performance                  | Create and distribute regular performance reports to stakeholders to provide updates on progress and issues            | xxx      | xxx \& yyy               |
-| 5.1          | Final Performance Review            | Conduct a comprehensive review of project performance, documenting successes and areas for improvement                 | xxx      | All                      |
-| 5.2          | Prepare Final Report                | Compile a detailed final report summarizing project outcomes, lessons learned, and recommendations for future projects | xxx      | xxx                      |
+| 1.1          | Assign Project Manager              | Appoint a qualified individual to over see the project's execution and ensure its success                              | 1 day    | Hartono                  |
+| 1.2          | Develop Project Charter             | Create a formal document outlining the project objectives, scope, stakeholders, and authority                          | 2 days   | All                      |
+| 1.3          | Meet Stake Holders                  | Organize initial meetings with stakeholders to gather input and set expectations                                       | 3 days   | All                      |
+| 2.1          | Collect Requirement                 | Gather and document detailed requirements from stakeholders for the project deliverables.                              | 2 days   | All                      |
+| 2.2          | Establish Scope Plan                | Define and document the project scope, including objectives, deliverables, and constraints.                            | 3 days   | Hao                      |
+| 2.3          | Create WBS                          | Develop a Work Breakdown Structure (WBS) to break down the project into manageable tasks.                              | 1 day    | Hartono                  |
+| 2.4          | Create Procurement Plan             | Develop a plan for acquiring goods and services from external suppliers                                                | 2 days   | Lindsay                  |
+| 2.5          | Create Gantt Chart                  | Develop a Gantt Chart to visually represent the project schedule and timeline                                          | 1 day    | Hao                      |
+| 2.6          | Estimate Activity Resources & Cost  | Assess the resources and budget needed for each activity to ensure effective allocation and cost management            | 2 days   | Lindsay                  |
+| 3.1          | Develop Front-End interface         | Design and build the user-interface, focusing on usability and accessibility for diverse end-users                     | 3 days   | Hartono                  |
+| 3.2          | Develop Back-End interface          | Create the server-side logic, databases, and APIs to support the front-end interface and overall functionality         | 3 days   | Lindsay                  |
+| 3.3          | Integrate features                  | Combine Front-End and Back-End components to ensure seamless, cohesive user experience                                 | 2 days   | Hartono & Lindsay        |
+| 3.4          | Quality Assurance & Testing         | Perform through testing to validate that the tool meets all specifications amd quality standards                       | 3 days   | Hao                      |
+| 3.5          | Deployment                          | Deploy the completed tool the production environment for use by all stakeholders and end-users                         | 3 days   | All                      |
+| 4.1          | Monitor Project Work                | Continuously track and assess project activities to ensure alignment with the project plan and scope                   | 2 days   | All                      |
+| 4.2          | Control Scope                       | Manage changes to the project scope to avoid scope creep and maintain focus on key objectives                          | 2 days   | Lindsay                  |
+| 4.3          | Control Schedule                    | Oversee the project timeline to ensure all tasks are completed within the designated timeframe                         | 1 day    | Hao                      |
+| 4.4          | Control Resources & Cost            | Monitor and adjust resource usage and expenses to keep the project within budget                                       | 1 day    | Lindsay                  |
+| 4.5          | Perform Quality Control             | Conduct reviews and inspections to ensure that project deliverables meet defined quality criteria                      | 2 days   | Hartono                  |
+| 4.6          | Report Performance                  | Create and distribute regular performance reports to stakeholders to provide updates on progress and issues            | 1 day    | Hartono                  |
+| 5.1          | Final Performance Review            | Conduct a comprehensive review of project performance, documenting successes and areas for improvement                 | 2 days   | Hao                      |
+| 5.2          | Prepare Final Report                | Compile a detailed final report summarizing project outcomes, lessons learned, and recommendations for future projects | 1 day    | Hao                      |
 
 
 ## 4. Gantt Chart
