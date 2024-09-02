@@ -101,10 +101,10 @@ Define the activities required for your project based on the WBS, and assign res
 | 4.2          | Control Scope                       | Manage changes to the project scope to avoid scope creep and maintain focus on key objectives                          | 2 days   | Lindsay                  |
 | 4.3          | Control Schedule                    | Oversee the project timeline to ensure all tasks are completed within the designated timeframe                         | 1 day    | Hao                      |
 | 4.4          | Control Resources & Cost            | Monitor and adjust resource usage and expenses to keep the project within budget                                       | 1 day    | Lindsay                  |
-| 4.5          | Perform Quality Control             | Conduct reviews and inspections to ensure that project deliverables meet defined quality criteria                      | 2 days   | Hartono                  |
-| 4.6          | Report Performance                  | Create and distribute regular performance reports to stakeholders to provide updates on progress and issues            | 1 day    | Hartono                  |
-| 5.1          | Final Performance Review            | Conduct a comprehensive review of project performance, documenting successes and areas for improvement                 | 2 days   | Hao                      |
-| 5.2          | Prepare Final Report                | Compile a detailed final report summarizing project outcomes, lessons learned, and recommendations for future projects | 1 day    | Hao                      |
+| 4.5          | Perform Quality Control             | Conduct reviews and inspections to ensure that project deliverables meet defined quality criteria                      | 1 days   | Hartono                  |
+| 4.6          | Report Performance                  | Create and distribute regular performance reports to stakeholders to provide updates on progress and issues            | 2 days   | Hartono                  |
+| 5.1          | Final Performance Review            | Conduct a comprehensive review of project performance, documenting successes and areas for improvement                 | 1 day    | Hao                      |
+| 5.2          | Prepare Final Report                | Compile a detailed final report summarizing project outcomes, lessons learned, and recommendations for future projects | 2 days   | Hao                      |
 
 
 ## 4. Gantt Chart
