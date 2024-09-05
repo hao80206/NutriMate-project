@@ -69,7 +69,59 @@ Additionally, the project includes visual aids like pie charts and bar graphs to
 
 ### 1.3 Project Scope
 
-Define and manage what is included or excluded in the project and product.
+### Project Scope
+
+**In-Scope (Included in the Project):**
+
+- **User Interface Design:**
+
+  Developing a desktop graphical user interface (GUI) that is intuitive and user-friendly, allowing users to interact with the nutritional database.
+
+- **Core Functionalities:**
+  - Food Search: Implementing a feature that allows users to search for foods by name and display all associated nutritional information.
+  - Nutrition Breakdown: Enabling users to view pie charts and bar graphs showing the breakdown of different nutrients for a selected food item.
+  - Nutrition Range Filter: Providing a tool for users to filter foods based on a specific nutrient within a user-defined minimum and maximum range.
+  - Nutrition Level Filter: Allowing users to categorize and filter foods by nutritional content levels—low, mid, and high—based on predefined thresholds.
+  - Additional Feature: Developing an extra feature (to be defined by the project team) for analyzing and visualizing the dataset in a meaningful way.
+
+- **Data Integration:**
+
+  Integrating the provided nutritional database with the application to ensure users can access and analyze the data effectively.
+
+- **Visual Aids:**
+
+  Incorporating graphical elements such as pie charts and bar graphs to help users visualize the nutritional data clearly.
+
+- **Testing and Quality Assurance:**
+
+  Performing thorough testing of the software to ensure all features work as expected and meet user requirements. Conducting usability testing to ensure the interface is easy to use and intuitive.
+
+- **Documentation and Version Control:**
+  - Documenting the design, development process, and user instructions for the application.
+  - Hosting the project on a private GitHub repository, with regular commits to track the incremental and collaborative efforts of the team.
+
+**Out-of-Scope (Excluded from the Project):**
+
+- **Mobile Application Development:**
+  
+  The project will not involve creating a mobile version of the application. The focus will be exclusively on desktop software.
+
+- **Database Expansion:**
+ 
+  The project will not include the creation or modification of the nutritional database. It will use the provided dataset as-is.
+
+- **Third-Party Integrations:**
+  
+  Integrating with third-party services or external databases is not part of this project.
+
+- **Advanced Data Analytics:**
+  
+  The project will not include complex data analytics beyond the basic filtering, searching, and visualization features outlined in the scope.
+
+- **Post-Project Maintenance:**
+  
+  Ongoing maintenance, updates, or support after the project delivery is not included. The project will end with the delivery of the fully functional desktop application.
+
 
 ## 2. Work Breakdown Structure
 
