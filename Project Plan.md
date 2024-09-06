@@ -53,7 +53,8 @@ The goal of this project is to create a user-friendly interface for Better Life'
 
 The project also features visual aids like pie charts and bar graphs to show the nutritional breakdown of foods clearly. These visuals will help users grasp the information more easily, leading to better dietary decisions. The tool will also be useful for dietitians, researchers, and educators, helping with dietary planning and nutritional education.
 
-Additionally, the project will include a feature for users with specific dietary goals, such as muscle gain. This feature will allow users to calculate their needed calorie intake and track their progress, making it easier to reach their fitness goals. Overall, the tool aims to make nutritional information more accessible and understandable, encouraging healthier eating habits and improving public health.
+Additionally, the project will implement a Daily Nutrition Calculator. This tool will enable users to input the foods they have consumed throughout the day and calculate their total nutritional intake.
+
 
 ### 1.2 Project Stakeholders
 
