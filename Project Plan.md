@@ -43,11 +43,17 @@ Please Describe what you have accomplished in this group project.
 
 ## 1. Project Overview
 
-### 1.1 Project Objectives
+### 1.1 Company Introduction
 
-The project is focused on creating a user-friendly graphical interface for the Nutritional Food Database. This interface makes it easier for users to access and understand detailed nutritional information. It features advanced search tools that allow users to filter and analyze data based on food type, nutrient content, and nutritional density. These tools help users get the specific information they need for informed dietary decisions.
+Better Life is a company focused on helping people lead healthier lives by providing tools and resources that support informed dietary choices and overall well-being.
 
-Additionally, the project includes visual aids like pie charts and bar graphs to clearly show the nutritional breakdown of foods. This visual approach helps users understand the data better, supporting informed choices about their diet. The tool also serves as a valuable resource for dietitians, researchers, and educators, improving dietary planning and nutritional education. By making nutritional information easy to access and understand, the tool encourages healthier eating habits, aiming to enhance public health outcomes.
+### 1.2 Project Objectives
+
+The goal of this project is to create a user-friendly interface for Better Life's Nutritional Food Database. This interface will make it easier for users to find and understand detailed nutritional information. It will include advanced search tools that let users filter and analyze data by food type, nutrient content, and nutritional density, helping them make informed dietary choices.
+
+The project also features visual aids like pie charts and bar graphs to show the nutritional breakdown of foods clearly. These visuals will help users grasp the information more easily, leading to better dietary decisions. The tool will also be useful for dietitians, researchers, and educators, helping with dietary planning and nutritional education.
+
+Additionally, the project will include a feature for users with specific dietary goals, such as muscle gain. This feature will allow users to calculate their needed calorie intake and track their progress, making it easier to reach their fitness goals. Overall, the tool aims to make nutritional information more accessible and understandable, encouraging healthier eating habits and improving public health.
 
 ### 1.2 Project Stakeholders
 
