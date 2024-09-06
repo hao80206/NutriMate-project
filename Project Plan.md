@@ -61,6 +61,8 @@ Additionally, the project will implement a Daily Nutrition Calculator. This tool
 **Internal Stakeholders:**
 * Company Executives oversee the project to ensure it aligns with the company’s goals. They focus on how the project can improve the company’s performance and reputation.
 
+* Product Manager: Leads the project, bridging the gap between the technical team and the business objectives. They ensure the tool meets user needs, stays on schedule, and fulfills the company’s strategic goals
+
 * Programmers and Designers work on building the software. They combine technical expertise with creative design (UI/UX )to ensure the tool is both effective and appealing.
 
 * Marketing Team works to get the tool noticed. They create campaigns that explain the benefits of the tool to attract and keep users.
@@ -68,11 +70,11 @@ Additionally, the project will implement a Daily Nutrition Calculator. This tool
 * Quality Assurance Team tests the software thoroughly to make sure this tool works perfectly and meets all user needs before it goes live.
 
 **Potential End-Users:**
-* Dietitians, Nutritionists, and Healthcare Professionals use the tool to get accurate nutritional information, which helps them give better advice to their clients and patients.
-
-* Researchers and Educators use the tool to enrich their academic and educational projects. It provides them with a reliable source of nutritional data that enhances learning and research activities.
 
 * The General Public includes anyone interested in learning more about their food choices. The tool provides them with clear nutritional information, helping them make healthier decisions.
+* Dietitians, Nutritionists, and Healthcare Professionals use the tool to get accurate nutritional information, which helps them give better advice to their clients and patients.
+* Researchers and Educators use the tool to enrich their academic and educational projects. It provides them with a reliable source of nutritional data that enhances learning and research activities.
+
 
 ### 1.3 Project Scope
 
@@ -82,14 +84,14 @@ Additionally, the project will implement a Daily Nutrition Calculator. This tool
 
 - **User Interface Design:**
 
-  Developing a desktop graphical user interface (GUI) that is intuitive and user-friendly, allowing users to interact with the nutritional database.
+  Creating a user-friendly desktop graphical interface (GUI) for easily navigating and interacting with the nutritional database.
 
 - **Core Functionalities:**
-  - Food Search: Implementing a feature that allows users to search for foods by name and display all associated nutritional information.
-  - Nutrition Breakdown: Enabling users to view pie charts and bar graphs showing the breakdown of different nutrients for a selected food item.
-  - Nutrition Range Filter: Providing a tool for users to filter foods based on a specific nutrient within a user-defined minimum and maximum range.
-  - Nutrition Level Filter: Allowing users to categorize and filter foods by nutritional content levels—low, mid, and high—based on predefined thresholds.
-  - Additional Feature: Developing an extra feature (to be defined by the project team) for analyzing and visualizing the dataset in a meaningful way.
+  * Food Search: Implementation of a feature that enables users to search for foods by name and view all relevant nutritional information.
+  * Nutrition Breakdown: Creation of visual tools, such as pie charts and bar graphs, to display the breakdown of various nutrients for one selected food item.
+  * Nutrition Range Filter: Introducing a filtering option that lets users set minimum and maximum values for specific nutrients, then finding foods within those ranges.
+  * Nutrition Level Filter: Implementation of a categorization and filtering system that organizes foods by nutritional content levels—low, mid, and high—based on predefined thresholds.
+  * Daily Nutrition Calculator: Development of a feature that enables users to input their daily food intake, calculate total nutritional consumption, with visual aids to illustrate nutrient contributions.
 
 - **Data Integration:**
 
@@ -97,21 +99,22 @@ Additionally, the project will implement a Daily Nutrition Calculator. This tool
 
 - **Visual Aids:**
 
-  Incorporating graphical elements such as pie charts and bar graphs to help users visualize the nutritional data clearly.
+  Implementing graphical elements such as pie charts and bar graphs to help users visualize the nutritional data clearly.
 
 - **Testing and Quality Assurance:**
 
-  Performing thorough testing of the software to ensure all features work as expected and meet user requirements. Conducting usability testing to ensure the interface is easy to use and intuitive.
+  * Performing thorough testing of the software to ensure all features work as expected and meet user requirements. 
+  * Conducting usability testing to ensure the interface is easy to use and intuitive.
 
 - **Documentation and Version Control:**
-  - Documenting the design, development process, and user instructions for the application.
-  - Hosting the project on a private GitHub repository, with regular commits to track the incremental and collaborative efforts of the team.
+  * Providing comprehensive documentation of the design, development process, and user instructions.
+  * Using a private GitHub repository for tracking progress with regular commits.
 
 **Out-of-Scope (Excluded from the Project):**
 
-- **Mobile Application Development:**
+- **Mobile and Web Application Development:**
   
-  The project will not involve creating a mobile version of the application. The focus will be exclusively on desktop software.
+  The project will not involve creating a mobile version or web-based interface of the application. The focus will be on desktop software.
 
 - **Database Expansion:**
  
@@ -125,9 +128,9 @@ Additionally, the project will implement a Daily Nutrition Calculator. This tool
   
   The project will not include complex data analytics beyond the basic filtering, searching, and visualization features outlined in the scope.
 
-- **Post-Project Maintenance:**
-  
-  Ongoing maintenance, updates, or support after the project delivery is not included. The project will end with the delivery of the fully functional desktop application.
+- **Advanced Machine Learning Algorithms:**
+
+  Implementing complex machine learning models is not within the scope of this project.
 
 
 ## 2. Work Breakdown Structure
