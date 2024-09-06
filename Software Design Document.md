@@ -49,19 +49,31 @@
 
 ### 1.1 Problem Background
 
-- Problem Identification: What problem does this system solve?
-- Dataset: What is the dataset used?
-- Data Input/Output: What kind of data input and output is required?
-- Target Users: Who will use the system, and why?
+- The nutritional base of Better Life is overly simplistic and challenging for customers to navigate, leading many to abandon it in favor of other tools. This base database is intended  to provide users with nutritional information about various products, but its current format does not facilitate easy access and understanding. As a result customer may struggle to find the information they need, which dimishes their overall experience and satisfaction with this service. A more user-friendly data analysis and visualization tool could significantly enhance the usability of this nutritional database, making it to engage with the platform more consistently. 
+- **Dataset:** The dataset contains nutritional information for various products, likely including details such as calories value, vitamins, and minerals.
+- **Data Input:** Users can only input basic search queries to product names.
+- **Data Output** The system likely provides plain text or simple tabular data of nutritional information, with no visual representation.
+- What kind of data input and output is required?
+- **Target Users:** The intended users for Better Life database are customers who are seeking for a nutritional information about products. These may include health-conscious individuals and people with dietary restrictions.
 
 ### 1.2 System capabilities/overview
 
-- System Functionality: What will the system do?
-- Features and Functionalities: Describe the key features and functionalities of the system.
+The business will benefit from this new capabilities increasing efficiency, convenience and improve sales. 
+- Enhance search functionality make finding easier for the customer
+- User-friendly interface to improve navigation
+- Visual representation tables or graphs 
+- Customizable user profiles for personalised experience
+- Visualizing progress over time
 
 ### 1.3	Benefit Analysis
 
-How will this system provide value or benefit?
+- Increase User retention
+- Improve customer satisfaction
+- Potentially partnership with grocery store
+- Increase profits 
+- Improve reputation
+- Competitive advantage
+- Increasing the frequency of web page 
 
 ## 2. Requirements
 
