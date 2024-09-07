@@ -155,7 +155,8 @@ R6. User Data Management
 
 
 ### 2.3 Use Case Diagram
-Provide a system-level Use Case Diagram illustrating all required features.
+
+The use case diagram visually represents the interactions between the user and the NutriMate system. It includes various functionalities that users can access, demonstrating the application's capabilities.
 
  
 
