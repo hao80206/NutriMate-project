@@ -165,17 +165,18 @@ Provide a system-level Use Case Diagram illustrating all required features.
 Include at least 5 use cases, each corresponding to a specific function.
 
 
-| Use Case ID    | UC-01                     |
-|----------------|-------------------------------------------------------|
-| Use Case Name  | Authenticate User        |
-| Actors         | Customer                                 |
+| Use Case ID    | UC-01                                                                                                                  |
+|----------------|------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Authenticate User                                                                                                      |
+| Actors         | Customer                                                                                                               |
 | Description    | The customer opens the app in the laptop and enter their pasword to authenticate their identity and access their account. |
-| Flow of Events | 1. Customer open the app in their laptop. |
-|                | 2. System prompts for pasword.            |
-|                | 3. Customer enters pasword.      |
-|                | 4. System verifies pasword with the Better Life system.    |
-|                | 5. System grants access to the customer.  |
-| Alternate Flow | If the pasword is incorrect, the system prompts the customer to re-enter the pasword. |
+| Flow of Events | 1. Customer open the app in their laptop.                                                                              |
+|                | 2. System prompts for pasword.                                                                                         |
+|                | 3. Customer enters pasword.                                                                                            |
+|                | 4. System verifies pasword with the Better Life system.                                                                |
+|                | 5. System grants access to the customer.                                                                               |
+| Alternate Flow | If the pasword is incorrect, the system prompts the customer to re-enter the pasword.                                  |
+| Postcondition  | The user is logged into their account                                                                                  |  
 
 | Use Case ID    | UC-03                                                                                                                   |
 |----------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -226,21 +227,28 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjust the criteria     |
 |Postcondition  | The user successfully filters foods based on the nutrient levels they selected                               |
 
-| Use Case ID   | xxx  |
-|---------------|------|
-| Use Case Name | xxxx |
-|  Actors       | xxxx |
-| Description   | xxxx |
-| Flow of Events | xxxx |
-| Alternate Flow | xxxx |
+| Use Case ID    | UC-06                                                                                                                                            |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Daily nutrition calculator                                                                                                                       |
+| Actors         | User                                                                                                                                             |
+| Description    | The user inputs foods they have consumed throughout the day and calculates their total daily nutrient intake.                                    |
+| Trigger        | The user selects the foods they have consumed during the day and presses the "Add to my day" button to determine their daily nutritional intake. |
+| Precondition   | The system must store food items and allow users to input their consumption data.                                                                |
+|                | The system must calculate and display total nutrient intake.                                                                                     |
+|                | The user need to be inside the food information to add                                                                                           |
+| Flow of Events | The user presses "Add to my day" button.                                                                                                         |
+|                | The system sums the nutritional content (calories, protein, fats, carbohydrates, etc.) for the entire day.                                       |
+|                | The system displays the total daily nutrient intake                                                                                              |
+| Alternate Flow | If the user exceeds or falls short of certain nutrient, the system can notify them.                                                              |
+| Postcondition  | The user successfully calculates their total daily nutrient intake and compares it to recommended values.                                        |
 
-| Use Case ID   | xxx  |
-|---------------|------|
-| Use Case Name | xxxx |
-|  Actors       | xxxx |
-| Description   | xxxx |
-| Flow of Events | xxxx |
-| Alternate Flow | xxxx |
+| Use Case ID   | UC-07 |
+|---------------|-------|
+| Use Case Name | N     |
+|  Actors       | User  |
+| Description   | xxxx  |
+| Flow of Events | xxxx  |
+| Alternate Flow | xxxx  |
 
 
 
