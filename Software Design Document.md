@@ -193,13 +193,21 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Alternate Flow | If the food is not found, the system display the following message "No results found" and prompts the user to try again |
 | Postcondition  | The user successfully retrieved the data.                              |
 
-| Use Case ID   | xxx  |
-|---------------|------|
-| Use Case Name | xxxx |
-|  Actors       | xxxx |
-| Description   | xxxx |
-| Flow of Events | xxxx |
-| Alternate Flow | xxxx |
+| Use Case ID    | UC-04                                                                                                                              |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Filter by Nutrition Range                                                                                                          |
+| Actors         | User                                                                                                                               |
+| Description    | The user filters foods by selecting a nutrient and specifying a range of values. The system displays foods that match the criteria. |
+| Precondition   | The system must allow users to select nutrients and specify ranges.                                                                |
+|                | The system must be able to retrieve food items that fall within the selected range.                                                |
+| Flow of Events | The user navigates to the "Filter by Nutrient Range" option.                                                                       |
+|                | The user selects a nutrient (e.g., "protein").                                                                                     |
+|                | The user inputs a minimum value (e.g., "5g") and a maximum value (e.g., "20g").                                                    |
+|                | The user presses the "Apply Filter" button.                                                                                        |
+|                | The system queries the database and retrieves a list of foods that meet the nutrient range criteria.                               |
+|                | The system displays the filtered list of foods to the user.                                                                        |
+| Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjusting the range.                          |
+|Postcondition| The user successfully filters and views foods that meet their specified nutrient range.                                            |
 
 | Use Case ID   | xxx  |
 |---------------|------|
