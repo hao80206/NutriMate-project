@@ -53,7 +53,7 @@
 - **Dataset:** The dataset contains nutritional information for various products, likely including details such as calories value, vitamins, and minerals.
 - **Data Input:** Users can only input basic search queries to product names.
 - **Data Output** The system likely provides plain text or simple tabular data of nutritional information, with no visual representation.
-- **Target Users:** The intended users for Better Life database are customers who are seeking for nutritional information about products. These may include health-conscious individuals and people with dietary restrictions.
+- **Target Users:** The intended users for NutriMate are user who are seeking for nutritional information about products , research, educators, and Healthcare Professionals. These may include health-conscious individuals and people with dietary restrictions.
 
 ### 1.2 System capabilities/overview
 
@@ -85,7 +85,7 @@ The business will benefit from this new capabilities increasing efficiency, conv
 - With enhanced features and user retention, we project a 20% increase in premium subscriptions within the first year, translating to an estimated $500,000 additional annual revenue.
 - By providing accurate and comprehensive nutritional information, NutriMate aims to become the go-to resource for dietary information, potentially increasing our app store rating from 3.0 to 4.5 stars.
 - The unique Nutrition Level Filter feature will set NutriMate apart from competitors, allowing users to easily find foods that match their specific nutritional needs, a feature currently not offered by major competitors.
-- The improved system will collect user behavior data, allowing Better Life to identify trends and potentially develop new products or features based on user preferences.
+- The improved system will collect user behavior data, allowing NutriMate to identify trends and potentially develop new products or features based on user preferences.
 
 
 ## 2. Requirements
@@ -167,18 +167,18 @@ The use case diagram visually represents the interactions between the user and t
 Include at least 5 use cases, each corresponding to a specific function.
 
 
-| Use Case ID    | UC-01                                                                                                                  |
-|----------------|------------------------------------------------------------------------------------------------------------------------|
-| Use Case Name  | Authenticate User                                                                                                      |
-| Actors         | Customer                                                                                                               |
+| Use Case ID    | UC-01                                                                                                                     |
+|----------------|---------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Authenticate User                                                                                                         |
+| Actors         | Customer                                                                                                                  |
 | Description    | The customer opens the app in the laptop and enter their pasword to authenticate their identity and access their account. |
-| Flow of Events | 1. Customer open the app in their laptop.                                                                              |
-|                | 2. System prompts for pasword.                                                                                         |
-|                | 3. Customer enters pasword.                                                                                            |
-|                | 4. System verifies pasword with the Better Life system.                                                                |
-|                | 5. System grants access to the customer.                                                                               |
-| Alternate Flow | If the pasword is incorrect, the system prompts the customer to re-enter the pasword.                                  |
-| Postcondition  | The user is logged into their account                                                                                  |  
+| Flow of Events | 1. Customer open the app in their laptop.                                                                                 |
+|                | 2. System prompts for pasword.                                                                                            |
+|                | 3. Customer enters pasword.                                                                                               |
+|                | 4. System verifies pasword with the NutriMate system.                                                                     |
+|                | 5. System grants access to the customer.                                                                                  |
+| Alternate Flow | If the pasword is incorrect, the system prompts the customer to re-enter the pasword.                                     |
+| Postcondition  | The user is logged into their account                                                                                     |  
 
 | Use Case ID    | UC-03                                                                                                                   |
 |----------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -196,22 +196,22 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Alternate Flow | If the food is not found, the system display the following message "No results found" and prompts the user to try again |
 | Postcondition  | The user successfully retrieved the data.                              |
 
-| Use Case ID    | UC-04                                                                                                                              |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------|
-| Use Case Name  | Filter by Nutrition Range                                                                                                          |
-| Actors         | User                                                                                                                               |
+| Use Case ID    | UC-04                                                                                                                               |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Filter by Nutrition Range                                                                                                           |
+| Actors         | User                                                                                                                                |
 | Description    | The user filters foods by selecting a nutrient and specifying a range of values. The system displays foods that match the criteria. |
-| Precondition   | The system must allow users to select nutrients and specify ranges.                                                                |
-|                | The system must be able to retrieve food items that fall within the selected range.                                                |
-|Trigger| The user selects a nutrient and specifies a range, then presses the "Apply Filter" button.                                                                       |
-| Flow of Events | The user navigates to the "Filter by Nutrient Range" option.                                                                       |
-|                | The user selects a nutrient (e.g., "protein").                                                                                     |
-|                | The user inputs a minimum value (e.g., "5g") and a maximum value (e.g., "20g").                                                    |
-|                | The user presses the "Apply Filter" button.                                                                                        |
-|                | The system queries the database and retrieves a list of foods that meet the nutrient range criteria.                               |
-|                | The system displays the filtered list of foods to the user.                                                                        |
-| Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjusting the range.                          |
-|Postcondition| The user successfully filters and views foods that meet their specified nutrient range.                                            |
+| Precondition   | The system must allow users to select nutrients and specify ranges.                                                                 |
+|                | The system must be able to retrieve food items that fall within the selected range.                                                 |
+| Trigger        | The user selects a nutrient and specifies a range, then presses the "Apply Filter" button.                                          |
+| Flow of Events | The user navigates to the "Filter by Nutrient Range" option.                                                                        |
+|                | The user selects a nutrient (e.g., "protein").                                                                                      |
+|                | The user inputs a minimum value (e.g., "5g") and a maximum value (e.g., "20g").                                                     |
+|                | The user presses the "Apply Filter" button.                                                                                         |
+|                | The system queries the database and retrieves a list of foods that meet the nutrient range criteria.                                |
+|                | The system displays the filtered list of foods to the user.                                                                         |
+| Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjusting the range.                           |
+| Postcondition  | The user successfully filters and views foods that meet their specified nutrient range.                                             |
 
 | Use Case ID   | UC- 05                                                                                                       |
 |---------------|--------------------------------------------------------------------------------------------------------------|
