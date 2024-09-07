@@ -54,43 +54,100 @@
 - **Data Input:** Users can only input basic search queries to product names.
 - **Data Output** The system likely provides plain text or simple tabular data of nutritional information, with no visual representation.
 - What kind of data input and output is required?
-- **Target Users:** The intended users for Better Life database are customers who are seeking for a nutritional information about products. These may include health-conscious individuals and people with dietary restrictions.
+- **Target Users:** The intended users for Better Life database are customers who are seeking for nutritional information about products. These may include health-conscious individuals and people with dietary restrictions.
 
 ### 1.2 System capabilities/overview
 
 The business will benefit from this new capabilities increasing efficiency, convenience and improve sales. 
 - Enhance search functionality make finding easier for the customer
-- User-friendly interface to improve navigation
-- Visual representation tables or graphs 
-- Customizable user profiles for personalised experience
-- Visualizing progress over time
+- User-friendly interface to improve navigation.
+- Visual representation tables or graphs showing nutritional information.
+- Users can input minimum and maximum values for the selected nutrient and get display all food that meet criteria.
+- Customer filter food based on nutritional content levels. 
+- Customer have a nutritional calculator helps to tracks and calculate the nutrients consumed during the day.
+- Customizable user profiles for personalised experience.
+
 
 ### 1.3	Benefit Analysis
 
-- Increase User retention
-- Improve customer satisfaction
-- Potentially partnership with grocery store
-- Increase profits 
-- Improve reputation
-- Competitive advantage
-- Increasing the frequency of web page 
+- We anticipate a 30% reduction in user drop-off within the first six months by introducing an intuitive user interface and enhanced search features
+- Improve customer satisfaction: The addition of visual nutritional breakdowns (e.g., pie charts for macronutrients) will provide users with easy-to-understand information, potentially increasing user satisfaction scores from 2 to 4.5 out of 5.
+- The improved database can integrate with grocery store inventory systems, allowing users to find nutritional information for products available in their local stores, opening up partnership opportunities with chains like Woolworths or Coles.
+- With enhanced features and user retention, we project a 20% increase in premium subscriptions within the first year, translating to an estimated $500,000 additional annual revenue.
+- By providing accurate and comprehensive nutritional information, NutriMate aims to become the go-to resource for dietary information, potentially increasing our app store rating from 3.0 to 4.5 stars.
+- The unique Nutrition Level Filter feature will set NutriMate apart from competitors, allowing users to easily find foods that match their specific nutritional needs, a feature currently not offered by major competitors.
+- The improved system will collect user behavior data, allowing Better Life to identify trends and potentially develop new products or features based on user preferences.
+- 
 
 ## 2. Requirements
 
 ### 2.1 User Requirements
 
-Detail how users are expected to interact with or use the program. What functionalities must the system provide from the end-user perspective? This can include both narrative descriptions and a listing of user needs.
+Catalina, a 32-year-old marketing executive, leads a busy life balancing her career and personal health goals. She's health-conscious but struggles to maintain a consistent diet due to her hectic schedule. Recently diagnosed with mild lactose intolerance, she's determined to make better food choices while managing her condition.
 
-Note: Since no specific client or user is assigned, you may create a fictional user. Who do you envision using your software?
+Catalina opens the NutriMate app on her laptop during her lunch break. The personalized dashboard greets her with "Welcome back, Catalina!" and displays her daily nutritional calculator. She quickly searches for "steak sandwich" and adds it to her lunch entry. The app instantly updates her daily totals, showing her remaining calorie allowance and nutrient intake.
+
+Noticing her protein intake is low, Catalina decides to add a lactose-free Greek yogurt from one of her favorite brands to her afternoon snack. She uses the search feature to find it and selects it. The system then recalculates her nutritional intake, showing that she has now met her protein goal for the day.
+
+Before closing the app, Catalina checks the weekly overview, which shows she's been consistent with her calorie goals but could improve her fiber intake. She makes a mental note to include more vegetables in her dinner.
+
+**User Needs:**
+- Quick and easy food search functionality to find nutritional information.
+- Personalized dashboard with daily nutritional goals and progress tracking.
+- Real-time updating of nutritional intake as foods are added to the calculator.
+- Visual representations of macronutrient balance (e.g., pie charts, progress bars).
+- Weekly overview of nutritional trends to monitor progress over time.
+- Suggestions for improving nutrient intake based on personal goals.
+- Ability to plan future meals and snacks easily.
+- Customizable alerts for exceeding or not meeting specific nutritional targets.
+- A recipe suggestion feature that recommends meals based on the user's nutritional goals.
 
 ### 2.2	Software Requirements
 Define the functionality the software will provide. This section should list requirements formally, often using the word "shall" to describe functionalities.
 
-Example Functional Requirements:  
-- R1.1 The program shall accept multiple file names as arguments from the command line.  
-- R1.2 Each file name can be a simple file name or include the full path of the file with one or more levels.  
+R1. User Interface and Navigation
+- R1.1 The application shall display a personalized dashboard upon user login.
+- R1.2 The application shall provide a search function for users to find foods.
 
-- etc …
+
+R2. Nutritional Information
+- R2.1 The system shall maintain a database of foods and their nutritional information.
+- R2.2 The system shall display detailed nutritional information for each food item, including calories, macronutrients, and micronutrients.
+
+
+R3. Food Logging
+- R3.1 The application shall allow users to add food items to their daily log.
+- R3.2 The system shall automatically calculate and update the user's daily nutritional totals when food items are added or removed from the log.
+
+
+R4. Goal Setting and Tracking
+- R4.1 The application shall allow users to set personalized nutritional goals.
+- R4.2 The system shall track the user's progress towards their nutritional goals in real-time.
+
+
+ R5. Visualization
+- R5.1 The application shall provide visual representations (e.g., charts, graphs) of the user's nutritional intake.
+- R5.2 The system shall display a weekly overview of the user's nutritional trends.
+- R5.3 The system shall show detailed nutritional information for each food item when selected by the user.
+
+R6. Advanced Nutritional Filtering
+- R6.1 The system shall provide a Nutrition Range Filter feature.
+  - R6.1.1 The system shall allow users to select a specific nutrient.
+  - R6.1.2 The system shall enable users to input minimum and maximum values for the selected nutrient.
+  - R6.1.3 The system shall display a list of foods that fall within the specified nutritional range.
+
+- R6.2 The system shall provide a Nutrition Level Filter feature.
+  
+  - R6.2.1 The system shall allow users to filter foods by nutritional content levels (low, mid, and high) for specific nutrients including fat, protein, carbohydrates, sugar, and nutritional density.
+  - R6.2.2 The system shall define the levels as follows:
+    Low: Less than 33% of the highest value in the database for that nutrient.
+    Mid: Between 33% and 66% of the highest value in the database for that nutrient.
+    High: Greater than 66% of the highest value in the database for that nutrient.
+  - R6.2.3 The system shall display foods that match the selected nutritional level criteria.
+
+R7. User Data Management
+- R7.1 The system shall securely store user profile information and nutritional data.
+
 
 ### 2.3 Use Case Diagram
 Provide a system-level Use Case Diagram illustrating all required features.
@@ -102,13 +159,14 @@ Example:
 Include at least 5 use cases, each corresponding to a specific function.
 
 
-| Use Case ID    | xxx  |
-|----------------|------|
-| Use Case Name  | xxxx |
-| Actors         | xxxx |
-| Description    | xxxx |
+| Use Case ID   | xxx  |
+|---------------|------|
+| Use Case Name | xxxx |
+|  Actors       | xxxx |
+| Description   | xxxx |
 | Flow of Events | xxxx |
 | Alternate Flow | xxxx |
+
 
 
 
