@@ -62,18 +62,19 @@ The business will benefit from this new capabilities increasing efficiency, conv
 1. User Authentication and Personalization 
    - Secure login
    - Personalised dashboard to each user
-   - Customisable calories intake 
+     - Customisable daily food intake 
 2. Food database and search function
    - Extensive database of food with nutritional information
 3. Data Visualization
-   - Interactive chart and graphs for food intake such as 
+   - Interactive pie chart and bar graphs for food intake such as 
    - Visual representation for macronutrient
 4. Detailed Nutritional Analysis
    - Comprehensive breakdown of macronutrients (proteins, carbohydrates, fats) and micronutrients
-5. Calorie Calculator Settings
-   - Customizable calories intake 
-   - Visual tracking with chart and graphs for day and week
-   - Achievement system to motivate user
+5. Daily Nutrition Calculator: 
+   - Customizable daily food intake 
+   - Calculate total nutritional consumption
+   - Visual tracking with chart and graphs for day.
+
 
 
 ### 1.3	Benefit Analysis
