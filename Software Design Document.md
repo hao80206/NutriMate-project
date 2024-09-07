@@ -242,13 +242,16 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Alternate Flow | If the user exceeds or falls short of certain nutrient, the system can notify them.                                                              |
 | Postcondition  | The user successfully calculates their total daily nutrient intake and compares it to recommended values.                                        |
 
-| Use Case ID   | UC-07 |
-|---------------|-------|
-| Use Case Name | N     |
-|  Actors       | User  |
-| Description   | xxxx  |
-| Flow of Events | xxxx  |
-| Alternate Flow | xxxx  |
+| Use Case ID    | UC-07                         |
+|----------------|-------------------------------|
+| Use Case Name  | Logout                        |
+| Actors         | User                          |
+| Description    | The user logs out of the app  |
+| Trigger        | The customer selects "Logout. |
+| Precondition   | The customer is authenticated |
+| Flow of Events | The customer selects "Logout  |
+|                | The system ends the session   |
+| Post-condition | The user is logged out        |
 
 
 
