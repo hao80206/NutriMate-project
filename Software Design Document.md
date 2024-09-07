@@ -200,6 +200,7 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Description    | The user filters foods by selecting a nutrient and specifying a range of values. The system displays foods that match the criteria. |
 | Precondition   | The system must allow users to select nutrients and specify ranges.                                                                |
 |                | The system must be able to retrieve food items that fall within the selected range.                                                |
+|Trigger| The user selects a nutrient and specifies a range, then presses the "Apply Filter" button.                                                                       |
 | Flow of Events | The user navigates to the "Filter by Nutrient Range" option.                                                                       |
 |                | The user selects a nutrient (e.g., "protein").                                                                                     |
 |                | The user inputs a minimum value (e.g., "5g") and a maximum value (e.g., "20g").                                                    |
@@ -209,13 +210,21 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjusting the range.                          |
 |Postcondition| The user successfully filters and views foods that meet their specified nutrient range.                                            |
 
-| Use Case ID   | xxx  |
-|---------------|------|
-| Use Case Name | xxxx |
-|  Actors       | xxxx |
-| Description   | xxxx |
-| Flow of Events | xxxx |
-| Alternate Flow | xxxx |
+| Use Case ID   | UC- 05                                                                                                       |
+|---------------|--------------------------------------------------------------------------------------------------------------|
+| Use Case Name | Filter by Nutritional Level                                                                                  |
+| Actors        | User                                                                                                         |
+| Description   | The user filters foods based on nutrient levels Low for a selected nutrient Sodium.                          |
+| Precondition  | The system categorizes nutrient levels (low, medium, high) based on predefined thresholds.                   |
+|               | The user has access to the filtering option in the interface.                                                |
+| Trigger       | The user selects a nutrient and chooses a level (Low, Mid, or High), then presses the "Apply Filter" button. |
+| Flow of Events | The user navigates to the "Filter by Nutritional Level" section.                                             |
+|               | The user selects a nutrient (e.g., "Vitamin A").                                                             |
+|               | The user selects one of the levels.                                                                          |
+|               | The user presses the "Apply Filter" button.                                                                  |
+|               | The system queries the database and retrieves a list of foods that meet the  criteria.                       |
+| Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjust the criteria     |
+|Postcondition  | The user successfully filters foods based on the nutrient levels they selected                               |
 
 | Use Case ID   | xxx  |
 |---------------|------|
