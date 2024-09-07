@@ -62,7 +62,7 @@ The business will benefit from this new capabilities increasing efficiency, conv
 1. User Authentication and Personalization 
    - Secure login
    - Personalised dashboard to each user
-     - Customisable daily food intake 
+   - Customisable daily food intake 
 2. Food database and search function
    - Extensive database of food with nutritional information
 3. Data Visualization
