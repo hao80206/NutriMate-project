@@ -177,15 +177,21 @@ Include at least 5 use cases, each corresponding to a specific function.
 |                | 5. System grants access to the customer.  |
 | Alternate Flow | If the pasword is incorrect, the system prompts the customer to re-enter the pasword. |
 
-| Use Case ID    | UC-03                           |
-|----------------|-------------------------------------------------------------------------------------------|
-| Use Case Name  | Search for food                |
-| Actors         | Customer                      |
-| Description    | The user search for a specific food item and retrieves the detail nutritional information |
-| Preconditions  | The system must have a database of food and their nutritional information|
-|                |The user is on the main screen and has access to the search bar|
-| Flow of Events | xxxx                                                                                      |
-| Alternate Flow | xxxx                                                                                      |
+| Use Case ID    | UC-03                                                                                                                   |
+|----------------|-------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Search for food                                                                                                         |
+| Actors         | Customer                                                                                                                |
+| Description    | The user search for a specific food item and retrieves the detail nutritional information                               |
+| Preconditions  | The system must have a database of food and their nutritional information                                               |
+|                | The user is on the main screen and has access to the search bar                                                         |
+| Trigger        | The user types a food item into the search bar and press search                                                         |
+| Flow of Events | The user opens the program and sees the search bar                                                                      |
+|                | The user types a name of the food item  'vegetable fruit juice' into the search bar                                     |
+|                | The user press the search button                                                                                        |
+|                | The system queries the database and retrieves the nutritional information for the food item                             |
+|                | The system display nutritional details in pie charts & bar graphs showing                                               |
+| Alternate Flow | If the food is not found, the system display the following message "No results found" and prompts the user to try again |
+| Postcondition  | The user successfully retrieved the data.                              |
 
 | Use Case ID   | xxx  |
 |---------------|------|
