@@ -125,7 +125,7 @@ R2. Nutritional Information
 
 
 R3. Calorie Calculator
-- R3.1 The application shall allow users to set personalized nutritional calories intake.
+- R3.1 The application shall allow users to set personalized nutritional calories' intake.
 - R3.2 The application shall allow users to add food items to their daily calculator.
 - R3.3 The system shall automatically calculate and update the user's daily nutritional totals when food items are added or removed from the log.
 - R3.4 The system shall track the user's progress towards their nutritional goals in real-time.
@@ -167,18 +167,18 @@ The use case diagram visually represents the interactions between the user and t
 Include at least 5 use cases, each corresponding to a specific function.
 
 
-| Use Case ID    | UC-01                                                                                                                     |
-|----------------|---------------------------------------------------------------------------------------------------------------------------|
-| Use Case Name  | Authenticate User                                                                                                         |
-| Actors         | Customer                                                                                                                  |
-| Description    | The customer opens the app in the laptop and enter their pasword to authenticate their identity and access their account. |
-| Flow of Events | 1. Customer open the app in their laptop.                                                                                 |
-|                | 2. System prompts for pasword.                                                                                            |
-|                | 3. Customer enters pasword.                                                                                               |
-|                | 4. System verifies pasword with the NutriMate system.                                                                     |
-|                | 5. System grants access to the customer.                                                                                  |
-| Alternate Flow | If the pasword is incorrect, the system prompts the customer to re-enter the pasword.                                     |
-| Postcondition  | The user is logged into their account                                                                                     |  
+| Use Case ID    | UC-01                                                                                                                      |
+|----------------|----------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Authenticate User                                                                                                          |
+| Actors         | Customer                                                                                                                   |
+| Description    | The customer opens the app in the laptop and enter their password to authenticate their identity and access their account. |
+| Flow of Events | 1. Customer open the app in their laptop.                                                                                  |
+|                | 2. System prompts for password.                                                                                            |
+|                | 3. Customer enters password.                                                                                               |
+|                | 4. System verifies password with the NutriMate system.                                                                     |
+|                | 5. System grants access to the customer.                                                                                   |
+| Alternate Flow | If the password is incorrect, the system prompts the customer to re-enter the password.                                    |
+| Post-condition | The user is logged into their account                                                                                      |  
 
 | Use Case ID    | UC-03                                                                                                                   |
 |----------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -194,7 +194,7 @@ Include at least 5 use cases, each corresponding to a specific function.
 |                | The system queries the database and retrieves the nutritional information for the food item                             |
 |                | The system display nutritional details in pie charts & bar graphs showing                                               |
 | Alternate Flow | If the food is not found, the system display the following message "No results found" and prompts the user to try again |
-| Postcondition  | The user successfully retrieved the data.                              |
+| Post-condition | The user successfully retrieved the data.                                                                               |
 
 | Use Case ID    | UC-04                                                                                                                               |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -211,23 +211,23 @@ Include at least 5 use cases, each corresponding to a specific function.
 |                | The system queries the database and retrieves a list of foods that meet the nutrient range criteria.                                |
 |                | The system displays the filtered list of foods to the user.                                                                         |
 | Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjusting the range.                           |
-| Postcondition  | The user successfully filters and views foods that meet their specified nutrient range.                                             |
+| Post-condition | The user successfully filters and views foods that meet their specified nutrient range.                                             |
 
-| Use Case ID   | UC- 05                                                                                                       |
-|---------------|--------------------------------------------------------------------------------------------------------------|
-| Use Case Name | Filter by Nutritional Level                                                                                  |
-| Actors        | User                                                                                                         |
-| Description   | The user filters foods based on nutrient levels Low for a selected nutrient Sodium.                          |
-| Precondition  | The system categorizes nutrient levels (low, medium, high) based on predefined thresholds.                   |
-|               | The user has access to the filtering option in the interface.                                                |
-| Trigger       | The user selects a nutrient and chooses a level (Low, Mid, or High), then presses the "Apply Filter" button. |
+| Use Case ID    | UC- 05                                                                                                       |
+|----------------|--------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Filter by Nutritional Level                                                                                  |
+| Actors         | User                                                                                                         |
+| Description    | The user filters foods based on nutrient levels Low for a selected nutrient Sodium.                          |
+| Precondition   | The system categorizes nutrient levels (low, medium, high) based on predefined thresholds.                   |
+|                | The user has access to the filtering option in the interface.                                                |
+| Trigger        | The user selects a nutrient and chooses a level (Low, Mid, or High), then presses the "Apply Filter" button. |
 | Flow of Events | The user navigates to the "Filter by Nutritional Level" section.                                             |
-|               | The user selects a nutrient (e.g., "Vitamin A").                                                             |
-|               | The user selects one of the levels.                                                                          |
-|               | The user presses the "Apply Filter" button.                                                                  |
-|               | The system queries the database and retrieves a list of foods that meet the  criteria.                       |
+|                | The user selects a nutrient (e.g., "Vitamin A").                                                             |
+|                | The user selects one of the levels.                                                                          |
+|                | The user presses the "Apply Filter" button.                                                                  |
+|                | The system queries the database and retrieves a list of foods that meet the  criteria.                       |
 | Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjust the criteria     |
-|Postcondition  | The user successfully filters foods based on the nutrient levels they selected                               |
+| Post-condition | The user successfully filters foods based on the nutrient levels they selected                               |
 
 | Use Case ID    | UC-06                                                                                                                                            |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -242,7 +242,7 @@ Include at least 5 use cases, each corresponding to a specific function.
 |                | The system sums the nutritional content (calories, protein, fats, carbohydrates, etc.) for the entire day.                                       |
 |                | The system displays the total daily nutrient intake                                                                                              |
 | Alternate Flow | If the user exceeds or falls short of certain nutrient, the system can notify them.                                                              |
-| Postcondition  | The user successfully calculates their total daily nutrient intake and compares it to recommended values.                                        |
+| Post-condition | The user successfully calculates their total daily nutrient intake and compares it to recommended values.                                        |
 
 | Use Case ID    | UC-07                         |
 |----------------|-------------------------------|
