@@ -59,6 +59,25 @@
 ### 1.2 System capabilities/overview
 
 The business will benefit from this new capabilities increasing efficiency, convenience and improve sales. 
+
+1. User Authentication and Personalization 
+   - Secure login
+   - Personalised dashboard to each user
+   - Customisable goals
+2. Food database and search function
+   - Extensive database of food with nutritional information 
+   - Intuitive search and predict suggestions
+3. Data Visualization
+   - Interactive chart and graphs for food intake
+   - Visual representation for macronutrient
+4. Detailed Nutritional Analysis
+   - Comprehensive breakdown of macronutrients (proteins, carbohydrates, fats) and micronutrients
+5. Goal Settings
+   - Customizable goals
+   - Visual tracking with chart and graphs for day and week
+   - Achievement system to motivate user
+
+**Other Form***
 - Enhance search functionality make finding easier for the customer
 - User-friendly interface to improve navigation.
 - Visual representation tables or graphs showing nutritional information.
@@ -153,6 +172,7 @@ R7. User Data Management
 Provide a system-level Use Case Diagram illustrating all required features.
 
 Example:  
+
 ![Use Case Diagram](./UCD.png)
 
 ### 2.4 Use Cases
