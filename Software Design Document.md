@@ -1,6 +1,6 @@
 # Software Design Document
 
-## Project Name: NutriMate
+## Project Name: Development of a Nutrition Tracking and Analysis Application called NutriMate
 ## Group Number: 044
 
 ## Team members
