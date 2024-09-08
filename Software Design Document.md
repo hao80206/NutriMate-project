@@ -111,11 +111,7 @@ Example:
 ### 3.2	System Components
 
 #### 3.2.1 Functions
-List all key functions within the software. For each function, provide:
-- Description: Brief explanation of the function’s purpose.
-- Input Parameters: List parameters, their data types, and their use.
-- Return Value: Describe what the function returns.
-- Side Effects: Note any side effects, such as changes to global variables or data passed by reference.
+This section lists the main functions used in the NutriApp software. Each function’s purpose is explained, along with the inputs it takes, what it returns, and any side effects. These functions are key to making the app work, like searching for foods, filtering nutrition data, calculating users' calorie and nutrient intake and needs, and showing nutrient breakdowns visually.
 
 ##### 3.2.1.1 find_food(name)
 - **Description:** Looks up the food database for an item by name and returns matching results.
@@ -217,11 +213,7 @@ List all key functions within the software. For each function, provide:
 
 
 #### 3.2.2 Data Structures / Data Sources
-List all data structures or sources used in the software. For each, provide:
-
-- Type: Type of data structure (e.g., list, set, dictionary).
-- Usage: Describe where and how it is used.
-- Functions: List functions that utilize this structure.
+This section explains the data structures and external sources used in NutriApp. It covers what each data structure is, how it’s used in the app, and which functions work with it. These data structures are important for handling and processing the nutrition info, user data, and visual outputs that the app relies on.
 
 ##### 3.2.2.1 Food Data List
 - Type: List of dictionaries
