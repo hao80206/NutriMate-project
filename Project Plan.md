@@ -15,7 +15,7 @@
 
 Please Describe what you have accomplished in this group project.
 - s5302345, Hartono Susanto
-  - Accomplishments: Created a repository for this project.
+  - Accomplishments: Created a repository for this project, project overview, WBS,and  system components.
 - s222222, Lindsay Soldevilla
   - Accomplishments: System vision and requirements 
 - s5327772, Hao Tsuneyama
