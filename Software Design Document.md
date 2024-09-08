@@ -108,7 +108,7 @@ Before closing the app, Catalina checks the weekly overview, which shows she's b
 - Suggestions for improving nutrient intake based on personal goals.
 - Ability to plan future meals and snacks easily.
 - Customizable alerts for exceeding or not meeting specific nutritional targets.
-- A recipe suggestion feature that recommends meals based on the user's nutritional goals.
+
 
 ### 2.2	Software Requirements
 Define the functionality the software will provide. This section should list requirements formally, often using the word "shall" to describe functionalities.
@@ -225,24 +225,6 @@ Include at least 5 use cases, each corresponding to a specific function.
 |               | The system queries the database and retrieves a list of foods that meet the  criteria.                       |
 | Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjust the criteria     |
 |Postcondition  | The user successfully filters foods based on the nutrient levels they selected                               |
-
-| Use Case ID   | xxx  |
-|---------------|------|
-| Use Case Name | xxxx |
-|  Actors       | xxxx |
-| Description   | xxxx |
-| Flow of Events | xxxx |
-| Alternate Flow | xxxx |
-
-| Use Case ID   | xxx  |
-|---------------|------|
-| Use Case Name | xxxx |
-|  Actors       | xxxx |
-| Description   | xxxx |
-| Flow of Events | xxxx |
-| Alternate Flow | xxxx |
-
-
 
 
 ## 3.	Software Design and System Components 

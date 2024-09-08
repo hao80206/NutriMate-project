@@ -1,7 +1,7 @@
 # Project Plan
 
-## Project Name: XXXX
 ## Group Number: 001
+## Project Name: Development of a Nutrition Tracking and Analysis Application called NutriMate
 
 ### Team members
 
