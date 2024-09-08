@@ -16,10 +16,10 @@
 Please Describe what you have accomplished in this group project.
 - s5302345, Hartono Susanto
   - Accomplishments: Created a repository for this project.
-- s222222, Full name
-  - Accomplishments: Describe what you have completed or achieved
+- s222222, Lindsay Soldevilla
+  - Accomplishments: System vision and requirements 
 - s5327772, Hao Tsuneyama
-  - Accomplishments: Describe what you have completed or achieved
+  - Accomplishments: Gantt Chart and User Interface Design
 
 <div style="page-break-after: always;"></div>
 
