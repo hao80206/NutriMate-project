@@ -1,7 +1,7 @@
 # Project Plan
 
-## Project Name: XXXX
-## Group Number: 001
+## Project Name: NutriMate
+## Group Number: 044
 
 ### Team members
 
