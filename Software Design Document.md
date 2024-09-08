@@ -278,13 +278,36 @@ Provide pseudocode or flowcharts for all functions listed in Section 3.2.1 that 
 ### 4.1 Structural Design
 Present a structural design, a hierarchy chart, showing the overall interface’s structure. Address:
 
-- Structure: How will the software be structured?
-- Information Grouping: How will information be organized?
-- Navigation: How will users navigate through the software?
-- Design Choices: Explain why these design choices were made.
+- Structure:
 
-Example:  
-![Structural Design](./Structural_Design.png)
+The software will follow a hierarchical structure with a centralized Dashboard as the main control center, from which users can access key features such as User Profile, Food Logging, Summary, Charts & Analytics, Settings, and Network Settings. Each main section branches into more specific functionalities. For instance, User Profile contains personal information, daily goals, and health stats, while Summary provides details on calorie intake, nutrient breakdowns, and exercise information.
+Overall, this structure allows for easy scalability and maintainability, where new features or updates can be added as sub-sections under the relevant categories.
+- Information
+
+**User Profile**: Focuses on user-specific information such as personal details, health stats, and goals.
+
+**Food Logging**: Allows users to input and track their meals, and view the nutrient content of their diet.
+
+**Summary**: Displays aggregate information such as calorie intake, nutrient breakdown, and exercise metrics, giving users a comprehensive view of their progress.
+
+**Charts & Analytics**: Provides visual insights like trends and nutrient analysis to help users better understand their dietary habits.
+
+**Settings and Network Settings**: Manage preferences like notifications, themes, and network configurations.
+- Navigation: 
+
+Users will navigate the app primarily through the Dashboard, which serves as the central hub. From the Dashboard, users can directly access all primary functions via buttons or tabs. Each primary function (e.g., User Profile, Food Logging, Summary) leads to more detailed sub-sections. Also, a back navigation button will always be present to allow users to return to the Dashboard or the previous section.
+- Design Choices
+
+The decision to have a Dashboard as the central control hub ensures users can easily access the most important features without feeling overwhelmed by too many options at once. This is especially helpful in a nutrition app, where users want to quickly log meals or view progress. 
+
+Grouping related information together, such as all calorie and nutrition tracking under Summary, helps users intuitively understand where to go for specific functions. It also aligns with how users think about health and nutrition—by logging their data, tracking it over time, and reviewing their progress. The clean, hierarchical structure makes it easy to add new features without disrupting the user experience. As the app grows, more sub-sections, like new types of data visualization, can be easily integrated without complicating the core navigation flow. 
+
+The design ensures users can quickly jump between different sections with minimal steps, making the app convenient for daily use. Keeping the navigation one-click away from the Dashboard is crucial for ensuring the app remains efficient for quick actions like logging meals.
+
+
+
+Structural Design:  
+![Structural Design](./Design_Structure.png)
 
 ### 4.2	Visual Design
 Include all wireframes or mock-ups of the interface. Provide a discussion, explanation, and justification for your design choices. Hand-drawn wireframes are acceptable.
