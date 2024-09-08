@@ -43,16 +43,25 @@ Please Describe what you have accomplished in this group project.
 
 ## 1. Project Overview
 
-### 1.1 Project Objectives
+### 1.1 Company Introduction
 
-The project is focused on creating a user-friendly graphical interface for the Nutritional Food Database. This interface makes it easier for users to access and understand detailed nutritional information. It features advanced search tools that allow users to filter and analyze data based on food type, nutrient content, and nutritional density. These tools help users get the specific information they need for informed dietary decisions.
+Better Life is a company focused on helping people lead healthier lives by providing tools and resources that support informed dietary choices and overall well-being.
 
-Additionally, the project includes visual aids like pie charts and bar graphs to clearly show the nutritional breakdown of foods. This visual approach helps users understand the data better, supporting informed choices about their diet. The tool also serves as a valuable resource for dietitians, researchers, and educators, improving dietary planning and nutritional education. By making nutritional information easy to access and understand, the tool encourages healthier eating habits, aiming to enhance public health outcomes.
+### 1.2 Project Objectives
+
+The goal of this project is to create a user-friendly interface for Better Life's Nutritional Food Database. This interface will make it easier for users to find and understand detailed nutritional information. It will include advanced search tools that let users filter and analyze data by food type, nutrient content, and nutritional density, helping them make informed dietary choices.
+
+The project also features visual aids like pie charts and bar graphs to show the nutritional breakdown of foods clearly. These visuals will help users grasp the information more easily, leading to better dietary decisions. The tool will also be useful for dietitians, researchers, and educators, helping with dietary planning and nutritional education.
+
+Additionally, the project will implement a Daily Nutrition Calculator. This tool will enable users to input the foods they have consumed throughout the day and calculate their total nutritional intake.
+
 
 ### 1.2 Project Stakeholders
 
 **Internal Stakeholders:**
 * Company Executives oversee the project to ensure it aligns with the company’s goals. They focus on how the project can improve the company’s performance and reputation.
+
+* Product Manager: Leads the project, bridging the gap between the technical team and the business objectives. They ensure the tool meets user needs, stays on schedule, and fulfills the company’s strategic goals
 
 * Programmers and Designers work on building the software. They combine technical expertise with creative design (UI/UX )to ensure the tool is both effective and appealing.
 
@@ -61,15 +70,68 @@ Additionally, the project includes visual aids like pie charts and bar graphs to
 * Quality Assurance Team tests the software thoroughly to make sure this tool works perfectly and meets all user needs before it goes live.
 
 **Potential End-Users:**
-* Dietitians, Nutritionists, and Healthcare Professionals use the tool to get accurate nutritional information, which helps them give better advice to their clients and patients.
-
-* Researchers and Educators use the tool to enrich their academic and educational projects. It provides them with a reliable source of nutritional data that enhances learning and research activities.
 
 * The General Public includes anyone interested in learning more about their food choices. The tool provides them with clear nutritional information, helping them make healthier decisions.
+* Dietitians, Nutritionists, and Healthcare Professionals use the tool to get accurate nutritional information, which helps them give better advice to their clients and patients.
+* Researchers and Educators use the tool to enrich their academic and educational projects. It provides them with a reliable source of nutritional data that enhances learning and research activities.
+
 
 ### 1.3 Project Scope
 
-Define and manage what is included or excluded in the project and product.
+### Project Scope
+
+**In-Scope (Included in the Project):**
+
+- **User Interface Design:**
+
+  Creating a user-friendly desktop graphical interface (GUI) for easily navigating and interacting with the nutritional database.
+
+- **Core Functionalities:**
+  * Food Search: Implementation of a feature that enables users to search for foods by name and view all relevant nutritional information.
+  * Nutrition Breakdown: Creation of visual tools, such as pie charts and bar graphs, to display the breakdown of various nutrients for one selected food item.
+  * Nutrition Range Filter: Introducing a filtering option that lets users set minimum and maximum values for specific nutrients, then finding foods within those ranges.
+  * Nutrition Level Filter: Implementation of a categorization and filtering system that organizes foods by nutritional content levels—low, mid, and high—based on predefined thresholds.
+  * Daily Nutrition Calculator: Development of a feature that enables users to input their daily food intake, calculate total nutritional consumption, with visual aids to illustrate nutrient contributions.
+
+- **Data Integration:**
+
+  Integrating the provided nutritional database with the application to ensure users can access and analyze the data effectively.
+
+- **Visual Aids:**
+
+  Implementing graphical elements such as pie charts and bar graphs to help users visualize the nutritional data clearly.
+
+- **Testing and Quality Assurance:**
+
+  * Performing thorough testing of the software to ensure all features work as expected and meet user requirements. 
+  * Conducting usability testing to ensure the interface is easy to use and intuitive.
+
+- **Documentation and Version Control:**
+  * Providing comprehensive documentation of the design, development process, and user instructions.
+  * Using a private GitHub repository for tracking progress with regular commits.
+
+**Out-of-Scope (Excluded from the Project):**
+
+- **Mobile and Web Application Development:**
+  
+  The project will not involve creating a mobile version or web-based interface of the application. The focus will be on desktop software.
+
+- **Database Expansion:**
+ 
+  The project will not include the creation or modification of the nutritional database. It will use the provided dataset as-is.
+
+- **Third-Party Integrations:**
+  
+  Integrating with third-party services or external databases is not part of this project.
+
+- **Advanced Data Analytics:**
+  
+  The project will not include complex data analytics beyond the basic filtering, searching, and visualization features outlined in the scope.
+
+- **Advanced Machine Learning Algorithms:**
+
+  Implementing complex machine learning models is not within the scope of this project.
+
 
 ## 2. Work Breakdown Structure
 
