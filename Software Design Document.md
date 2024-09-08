@@ -291,23 +291,54 @@ Provide pseudocode or flowcharts for all functions listed in Section 3.2.1 that 
 ### 4.1 Structural Design
 Present a structural design, a hierarchy chart, showing the overall interface’s structure. Address:
 
-- Structure: How will the software be structured?
-- Information Grouping: How will information be organized?
-- Navigation: How will users navigate through the software?
-- Design Choices: Explain why these design choices were made.
+- Structure:
 
-Example:  
-![Structural Design](./Structural_Design.png)
+The software will follow a hierarchical structure with a centralized Dashboard as the main control center, from which users can access key features such as User Profile, Food Logging, Summary, Charts & Analytics, Settings, and Network Settings. Each main section branches into more specific functionalities. For instance, User Profile contains personal information, daily goals, and health stats, while Summary provides details on calorie intake, nutrient breakdowns, and exercise information.
+Overall, this structure allows for easy scalability and maintainability, where new features or updates can be added as sub-sections under the relevant categories.
+- Information
+
+**User Profile**: Focuses on user-specific information such as personal details, health stats, and goals.
+
+**Food Logging**: Allows users to input and track their meals, and view the nutrient content of their diet.
+
+**Summary**: Displays aggregate information such as calorie intake, nutrient breakdown and giving users a comprehensive view of their progress.
+
+**Charts & Analytics**: Provides visual insights like trends and nutrient analysis to help users better understand their dietary habits.
+
+**Settings and Network Settings**: Manage preferences like notifications, themes, and network configurations.
+- Navigation: 
+
+Users will navigate the app primarily through the Dashboard, which serves as the central hub. From the Dashboard, users can directly access all primary functions via buttons or tabs. Each primary function (e.g., User Profile, Food Logging, Summary) leads to more detailed sub-sections. Also, a back navigation button will always be present to allow users to return to the Dashboard or the previous section.
+- Design Choices
+
+The decision to have a Dashboard as the central control hub ensures users can easily access the most important features without feeling overwhelmed by too many options at once. This is especially helpful in a nutrition app, where users want to quickly log meals or view progress. 
+
+Grouping related information together, such as all calorie and nutrition tracking under Summary, helps users intuitively understand where to go for specific functions. It also aligns with how users think about health and nutrition—by logging their data, tracking it over time, and reviewing their progress. The clean, hierarchical structure makes it easy to add new features without disrupting the user experience. As the app grows, more sub-sections, like new types of data visualization, can be easily integrated without complicating the core navigation flow. 
+
+The design ensures users can quickly jump between different sections with minimal steps, making the app convenient for daily use. Keeping the navigation one-click away from the Dashboard is crucial for ensuring the app remains efficient for quick actions like logging meals.
+
+
+
+Structural Design:  
+![Structural Design](./Design_Structure.png)
 
 ### 4.2	Visual Design
 Include all wireframes or mock-ups of the interface. Provide a discussion, explanation, and justification for your design choices. Hand-drawn wireframes are acceptable.
 
-- Interface Components: Clearly label all components.
-- Screens/Menus: Provide wireframes for different screens, menus, and options.
-- Design Details: Focus on the layout and size of components; color and graphics are not required. 
+The top section, "Check Calories and Nutritional Data," is designed to allow users to search for specific foods and view detailed nutritional information. It features a search bar where users can type the name of a food, such as "omelet," to fetch its nutritional data. The nutritional breakdown is visually represented using a pie chart, showing the distribution of key nutrients such as fats, proteins, carbohydrates, and sugars. Additionally, a bar graph is used to display detailed micronutrient information, including elements like Selenium, Cholesterol, and Potassium, enabling users to understand the concentrations of these nutrients in the food.
+
+The middle section, titled "Find Food that Suits You," allows users to filter foods based on their nutritional needs, either by setting specific nutrient ranges or by filtering according to nutritional content levels. For the range filter, users can specify a nutrient, such as protein, and define minimum and maximum values, after which foods within that range are displayed. The level filter, on the other hand, enables users to categorize foods by "low," "mid," or "high" levels for various nutrients like fat, protein, carbohydrates, sugars, and nutritional density. Based on the user's selections, matching foods are displayed with accompanying images and brief descriptions, such as "low fat & sugars" or "high protein."
+
+The bottom section, labeled "Summary," provides a recap of the user's health and dietary activity. This section shows the user's daily calorie intake using a progress circle (e.g., 1500 calories consumed). Additionally, it offers a nutritional breakdown of the user's food intake, showing consumed nutrients like carbohydrates, proteins, and fats, alongside suggested daily intake values for these nutrients.
 
 Example:  
-![Visual Design](./visual_design.png)
+![Visual Design](./Screen1.png)
+![Visual Design](./Screen2.png)
+![Visual Design](./Screen3.png)
+![Visual Design](./Screen4.png)
+![Visual Design](./Screen5.png)
+![Visual Design](./Screen6.png)
+![Visual Design](./Screen7.png)
 
 
 
