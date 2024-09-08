@@ -103,10 +103,11 @@ Include at least 5 use cases, each corresponding to a specific function.
 ## 3.	Software Design and System Components 
 
 ### 3.1	Software Design
-Include a flowchart that illustrates how your software will operate.
+This section explains how the NutriMate App is set up and works. A flowchart shows the main parts and how they connect, making it clear how data flows through the system. 
 
-Example:  
+NutriMate App Flowchart:
 ![Software Design](./software_design_flowchart.png)
+
 
 ### 3.2	System Components
 
