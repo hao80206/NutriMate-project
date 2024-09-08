@@ -1,16 +1,15 @@
 # Software Design Document
 
-## Project Name: XXXX
-## Group Number: 001
+## Project Name: NutriMate
+## Group Number: 044
 
 ## Team members
 
-| Student Number | Name      | 
-|----------------|-----------|
-| s111111        | Full name |
-| s222222        | Full name | 
-| s333333        | Full name | 
-
+| Student Number | Name             | 
+|----------------|------------------|
+| s5302345         | Hartono Susanto |
+| s5270370    | Lindsay Soldevilla |
+| s5327772    | Hao Tsuneyama    |
 
 <div style="page-break-after: always;"></div>
 
