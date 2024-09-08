@@ -248,10 +248,11 @@ Include at least 5 use cases, each corresponding to a specific function.
 ## 3.	Software Design and System Components 
 
 ### 3.1	Software Design
-Include a flowchart that illustrates how your software will operate.
+This section explains how the NutriMate App is set up and works. A flowchart shows the main parts and how they connect, making it clear how data flows through the system. 
 
-Example:  
+NutriMate App Flowchart:
 ![Software Design](./software_design_flowchart.png)
+
 
 ### 3.2	System Components
 
@@ -424,6 +425,156 @@ This section explains the data structures and external sources used in NutriApp.
 
 #### 3.2.3 Detailed Design
 Provide pseudocode or flowcharts for all functions listed in Section 3.2.1 that operate on data structures. For instance, include pseudocode or a flowchart for a custom searching function.
+
+### 3.2.3 Detailed Design
+
+This section presents the detailed design of the key functions described in Section 3.2.1. For each function that interacts with the data structures outlined in Section 3.2.2, pseudocode is provided to clarify the logical flow and operations.
+
+#### 3.2.3.1 Pseudocode for **find_food(name)**
+
+  Purpose: Searches for food items in the database by name.
+    
+    FUNCTION find_food(name, food_data_list)
+        CREATE an empty list to store matching food items
+        FOR each food item in the list
+            IF the name matches the food item
+                ADD the food item to the list
+        RETURN the list of matching food items
+
+#### 3.2.3.2 Pseudocode for **get_nutrition(name)**
+
+  Purpose: Retrieves nutritional details of a specific food item.
+
+    Pseudocode:
+    
+    FUNCTION get_nutrition(name, food_data_list)
+        FOR each food item in the list
+            IF the name matches the food item
+                RETURN the nutritional details of the food item
+        RETURN nothing if no match is found
+
+#### 3.2.3.3 Pseudocode for **filter_by_range(nutrient, min_val, max_val)**
+
+  Purpose: Filters food items by a specified nutrient range.
+
+    Pseudocode:
+    
+    FUNCTION filter_by_range(nutrient, min_val, max_val, food_data_list)
+        CREATE an empty list to store filtered food items
+        FOR each food item in the list
+            IF the nutrient value is within the specified range
+                ADD the food item to the list
+        RETURN the list of filtered food items
+
+#### 3.2.3.4 Pseudocode for **filter_by_level(level)**
+
+  Purpose: Filters food items based on nutrient levels (low, mid, high).
+
+    Pseudocode:
+    
+    FUNCTION filter_by_level(level, nutrient_levels, food_data_list)
+        CREATE an empty list to store filtered food items
+        FOR each food item in the list
+            IF the nutrient level matches the specified level
+                ADD the food item to the list
+        RETURN the list of filtered food items
+
+#### 3.2.3.5 Pseudocode for **calc_calories(user_data)**
+
+  Purpose: Calculates the daily calorie needs for a user.
+
+    Pseudocode:
+    
+    FUNCTION calc_calories(user_data)
+        GET the user's personal data (weight, height, age, activity level)
+        CALCULATE the daily calorie needs using the user's data
+        RETURN the calculated calorie needs
+
+#### 3.2.3.6 Pseudocode for **calc_nutrients(user_data)**
+
+  Purpose: Calculates the recommended daily intake of nutrients for a user.
+
+    Pseudocode:
+    
+    FUNCTION calc_nutrients(user_data)
+        GET the user's personal data (weight, dietary goals)
+        CALCULATE the recommended intake for protein, fat, and carbohydrates
+        RETURN the calculated nutrient needs
+
+#### 3.2.3.7 Pseudocode for **load_food_csv(source)**
+
+  Purpose: Loads food data from a CSV file.
+
+    Pseudocode:
+    
+    FUNCTION load_food_csv(source)
+        READ the CSV file
+        STORE the data in a list of dictionaries
+        RETURN the list of food items
+
+#### 3.2.3.8 Pseudocode for **load_nutrient_csv(source)**
+
+  Purpose: Loads nutrient descriptions from a CSV file.
+
+    Pseudocode:
+    
+    FUNCTION load_nutrient_csv(source)
+        READ the CSV file
+        STORE the descriptions in a dictionary
+        RETURN the nutrient descriptions
+
+#### 3.2.3.9 Pseudocode for **update_food_csv(new_data)**
+
+  Purpose: Updates the existing food data with new or modified items.
+
+    Pseudocode:
+    
+    FUNCTION update_food_csv(new_data, food_data_list)
+        FOR each new or updated food item in new_data
+            ADD or UPDATE the food item in the food data list
+        RETURN the updated food data list
+
+#### 3.2.3.10 Pseudocode for **update_nutrient_csv(new_data)**
+
+  Purpose: Updates the existing nutrient descriptions.
+
+    Pseudocode:
+    
+    FUNCTION update_nutrient_csv(new_data, nutrient_descriptions)
+        FOR each new or updated nutrient in new_data
+            ADD or UPDATE the nutrient in the nutrient descriptions
+        RETURN the updated nutrient descriptions
+
+#### 3.2.3.11 Pseudocode for **prep_visual_data(food_item)**
+
+  Purpose: Prepares data for visualization.
+
+    Pseudocode:
+    
+    FUNCTION prep_visual_data(food_item)
+        EXTRACT relevant nutritional information from the food item
+        ORGANIZE the data for visualization
+        RETURN the prepared data
+
+#### 3.2.3.12 Pseudocode for **make_pie(data)**
+
+  Purpose: Creates a pie chart from nutritional data.
+
+    Pseudocode:
+    
+    FUNCTION make_pie(data)
+        USE the data to create a pie chart
+        RETURN the pie chart
+
+#### 3.2.3.13 Pseudocode for **make_bar(data)**
+
+  Purpose: Creates a bar chart to show nutrient breakdown.
+
+    Pseudocode:
+    
+    FUNCTION make_bar(data)
+        USE the data to create a bar chart
+        RETURN the bar chart
 
 
 ## 4. User Interface Design
