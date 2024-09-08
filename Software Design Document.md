@@ -312,12 +312,20 @@ Structural Design:
 ### 4.2	Visual Design
 Include all wireframes or mock-ups of the interface. Provide a discussion, explanation, and justification for your design choices. Hand-drawn wireframes are acceptable.
 
-- Interface Components: Clearly label all components.
-- Screens/Menus: Provide wireframes for different screens, menus, and options.
-- Design Details: Focus on the layout and size of components; color and graphics are not required. 
+The top section, "Check Calories and Nutritional Data," is designed to allow users to search for specific foods and view detailed nutritional information. It features a search bar where users can type the name of a food, such as "omelet," to fetch its nutritional data. The nutritional breakdown is visually represented using a pie chart, showing the distribution of key nutrients such as fats, proteins, carbohydrates, and sugars. Additionally, a bar graph is used to display detailed micronutrient information, including elements like Selenium, Cholesterol, and Potassium, enabling users to understand the concentrations of these nutrients in the food.
+
+The middle section, titled "Find Food that Suits You," allows users to filter foods based on their nutritional needs, either by setting specific nutrient ranges or by filtering according to nutritional content levels. For the range filter, users can specify a nutrient, such as protein, and define minimum and maximum values, after which foods within that range are displayed. The level filter, on the other hand, enables users to categorize foods by "low," "mid," or "high" levels for various nutrients like fat, protein, carbohydrates, sugars, and nutritional density. Based on the user's selections, matching foods are displayed with accompanying images and brief descriptions, such as "low fat & sugars" or "high protein."
+
+The bottom section, labeled "Summary," provides a recap of the user's health and dietary activity. It includes a BMI calculator that displays the user's current Body Mass Index (BMI) along with a health message, for instance, "Underweight." This section also shows the user's daily calorie intake using a progress circle (e.g., 1500 calories consumed), as well as the number of calories burned (e.g., 1200 kcal). Additionally, it offers a nutritional breakdown of the user's food intake, showing consumed nutrients like carbohydrates, proteins, and fats, alongside suggested daily intake values for these nutrients.
 
 Example:  
-![Visual Design](./visual_design.png)
+![Visual Design](./Screen1.png)
+![Visual Design](./Screen2.png)
+![Visual Design](./Screen3.png)
+![Visual Design](./Screen4.png)
+![Visual Design](./Screen5.png)
+![Visual Design](./Screen6.png)
+![Visual Design](./Screen7.png)
 
 
 
