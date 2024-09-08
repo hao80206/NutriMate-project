@@ -272,9 +272,9 @@ This section explains the data structures and external sources used in NutriApp.
   - Holds data that’s ready to be shown visually (e.g., bar charts, pie charts).
   - Used in the Nutrition Breakdown feature to show nutrient distributions visually.
 - **Functions:**
-  - `prep_visual_data(food_item)`: Prepares the nutrition info of a food item for visualization.
-  - `make_pie(data)`: Creates a pie chart from the data.
-  - `make_bar(data)`: Creates a bar chart to show the nutrient breakdown.
+  - prep_visual_data(food_item): Prepares the nutrition info of a food item for visualization.
+  - make_pie(data): Creates a pie chart from the data.
+  - make_bar(data): Creates a bar chart to show the nutrient breakdown.
 
 
 #### 3.2.3 Detailed Design
