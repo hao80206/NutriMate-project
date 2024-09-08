@@ -8,7 +8,7 @@
 | Student No. | Full Name | GitHub Username | Contribution (sum to 100%) | 
 |-------------|-----------|-----------------|----------------------------|
 | s5302345 | Hartono Susanto | hartonoosu | 33.3% or Equal             |
-| s222222     | Lindsay | xxx             | 33.3% or Equal             | 
+| s222222     | Full name | xxx             | 33.3% or Equal             | 
 | s333333     | Full name | xxx             | 33.3% or Equal             | 
 
 ### Brief Description of Contribution
