@@ -49,9 +49,9 @@ Better Life is a company focused on helping people lead healthier lives by provi
 
 ### 1.2 Project Objectives
 
-The goal of this project is to create a user-friendly interface for Better Life's Nutritional Food Database. This interface will make it easier for users to find and understand detailed nutritional information. It will include advanced search tools that let users filter and analyze data by food type, nutrient content, and nutritional density, helping them make informed dietary choices.
+The goal of this project is to create a user-friendly app for Better Life's Nutritional Food Database, called NutriMate. This NutriMate app will make it easier for users to find and understand detailed nutritional information. It will include advanced search tools that let users filter and analyze data by food type, nutrient content, and nutritional density, helping them make informed dietary choices.
 
-The project also features visual aids like pie charts and bar graphs to show the nutritional breakdown of foods clearly. These visuals will help users grasp the information more easily, leading to better dietary decisions. The tool will also be useful for dietitians, researchers, and educators, helping with dietary planning and nutritional education.
+NutriMate will also be featuring visual aids like pie charts and bar graphs to show the nutritional breakdown of foods clearly. These visuals will help users grasp the information more easily, leading to better dietary decisions. The tool will also be useful for dietitians, researchers, and educators, helping with dietary planning and nutritional education.
 
 Additionally, the project will implement a Daily Nutrition Calculator. This tool will enable users to input the foods they have consumed throughout the day and calculate their total nutritional intake.
 
@@ -135,13 +135,13 @@ Additionally, the project will implement a Daily Nutrition Calculator. This tool
 
 ## 2. Work Breakdown Structure
 
-Include the Work Breakdown Structure (WBS) for the entire project. WBS should be presented as a hierarchical diagram. Use the elements from the WBS to define activities in Section 3, and schedule these activities in the Gantt Chart in Section 4. Ensure all project activities are considered and included in the WBS.
+The Work Breakdown Structure (WBS) for the NutriMate App Project details the key tasks and deliverables needed to develop the app. It breaks down the project into manageable phases, including initiating, planning, executing, controlling and closing.
 
 ![WBS](./WBS.png)
 
 ## 3. Activity Definition Estimation
 
-Define the activities required for your project based on the WBS, and assign responsibilities to team members. Each activity should be numbered and correspond with your Gantt chart. Provide estimated durations for each activity to facilitate Gantt chart preparation.
+
 
 | Activity #No | Activity Name | Brief Description | Duration | Responsible Team Members |
 |--------------|---------------|-------------------|----------|--------------------------|
