@@ -1,7 +1,7 @@
 # Project Plan
 
-## Group Number: 001
 ## Project Name: Development of a Nutrition Tracking and Analysis Application called NutriMate
+## Group Number: 044
 
 ### Team members
 
@@ -15,11 +15,11 @@
 
 Please Describe what you have accomplished in this group project.
 - s5302345, Hartono Susanto
-  - Accomplishments: Created a repository for this project.
-- s222222, Full name
-  - Accomplishments: Describe what you have completed or achieved
+  - Accomplishments: Created a repository for this project, project overview, WBS,and  system components.
+- s222222, Lindsay Soldevilla
+  - Accomplishments: System vision and requirements 
 - s5327772, Hao Tsuneyama
-  - Accomplishments: Describe what you have completed or achieved
+  - Accomplishments: Gantt Chart and User Interface Design
 
 <div style="page-break-after: always;"></div>
 

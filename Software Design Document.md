@@ -1,16 +1,15 @@
 # Software Design Document
 
-## Project Name: XXXX
-## Group Number: 001
+## Project Name: Development of a Nutrition Tracking and Analysis Application called NutriMate
+## Group Number: 044
 
 ## Team members
 
-| Student Number | Name      | 
-|----------------|-----------|
-| s111111        | Full name |
-| s222222        | Full name | 
-| s333333        | Full name | 
-
+| Student Number | Name             | 
+|----------------|------------------|
+| s5302345         | Hartono Susanto |
+| s5270370    | Lindsay Soldevilla |
+| s5327772    | Hao Tsuneyama    |
 
 <div style="page-break-after: always;"></div>
 
@@ -53,7 +52,7 @@
 - **Dataset:** The dataset contains nutritional information for various products, likely including details such as calories value, vitamins, and minerals.
 - **Data Input:** Users can only input basic search queries to product names.
 - **Data Output** The system likely provides plain text or simple tabular data of nutritional information, with no visual representation.
-- **Target Users:** The intended users for Better Life database are customers who are seeking for nutritional information about products. These may include health-conscious individuals and people with dietary restrictions.
+- **Target Users:** The intended users for NutriMate are user who are seeking for nutritional information about products , research, educators, and Healthcare Professionals. These may include health-conscious individuals and people with dietary restrictions.
 
 ### 1.2 System capabilities/overview
 
@@ -62,18 +61,19 @@ The business will benefit from this new capabilities increasing efficiency, conv
 1. User Authentication and Personalization 
    - Secure login
    - Personalised dashboard to each user
-   - Customisable calories intake 
+   - Customisable daily food intake 
 2. Food database and search function
    - Extensive database of food with nutritional information
 3. Data Visualization
-   - Interactive chart and graphs for food intake such as 
+   - Interactive pie chart and bar graphs for food intake such as 
    - Visual representation for macronutrient
 4. Detailed Nutritional Analysis
    - Comprehensive breakdown of macronutrients (proteins, carbohydrates, fats) and micronutrients
-5. Calorie Calculator Settings
-   - Customizable calories intake 
-   - Visual tracking with chart and graphs for day and week
-   - Achievement system to motivate user
+5. Daily Nutrition Calculator: 
+   - Customizable daily food intake 
+   - Calculate total nutritional consumption
+   - Visual tracking with chart and graphs for day.
+
 
 
 ### 1.3	Benefit Analysis
@@ -84,7 +84,7 @@ The business will benefit from this new capabilities increasing efficiency, conv
 - With enhanced features and user retention, we project a 20% increase in premium subscriptions within the first year, translating to an estimated $500,000 additional annual revenue.
 - By providing accurate and comprehensive nutritional information, NutriMate aims to become the go-to resource for dietary information, potentially increasing our app store rating from 3.0 to 4.5 stars.
 - The unique Nutrition Level Filter feature will set NutriMate apart from competitors, allowing users to easily find foods that match their specific nutritional needs, a feature currently not offered by major competitors.
-- The improved system will collect user behavior data, allowing Better Life to identify trends and potentially develop new products or features based on user preferences.
+- The improved system will collect user behavior data, allowing NutriMate to identify trends and potentially develop new products or features based on user preferences.
 
 
 ## 2. Requirements
@@ -109,7 +109,6 @@ Before closing the app, Catalina checks the weekly overview, which shows she's b
 - Ability to plan future meals and snacks easily.
 - Customizable alerts for exceeding or not meeting specific nutritional targets.
 
-
 ### 2.2	Software Requirements
 Define the functionality the software will provide. This section should list requirements formally, often using the word "shall" to describe functionalities.
 
@@ -124,7 +123,7 @@ R2. Nutritional Information
 
 
 R3. Calorie Calculator
-- R3.1 The application shall allow users to set personalized nutritional calories intake.
+- R3.1 The application shall allow users to set personalized nutritional calories' intake.
 - R3.2 The application shall allow users to add food items to their daily calculator.
 - R3.3 The system shall automatically calculate and update the user's daily nutritional totals when food items are added or removed from the log.
 - R3.4 The system shall track the user's progress towards their nutritional goals in real-time.
@@ -155,7 +154,8 @@ R6. User Data Management
 
 
 ### 2.3 Use Case Diagram
-Provide a system-level Use Case Diagram illustrating all required features.
+
+The use case diagram visually represents the interactions between the user and the NutriMate system. It includes various functionalities that users can access, demonstrating the application's capabilities.
 
  
 
@@ -165,17 +165,18 @@ Provide a system-level Use Case Diagram illustrating all required features.
 Include at least 5 use cases, each corresponding to a specific function.
 
 
-| Use Case ID    | UC-01                     |
-|----------------|-------------------------------------------------------|
-| Use Case Name  | Authenticate User        |
-| Actors         | Customer                                 |
-| Description    | The customer opens the app in the laptop and enter their pasword to authenticate their identity and access their account. |
-| Flow of Events | 1. Customer open the app in their laptop. |
-|                | 2. System prompts for pasword.            |
-|                | 3. Customer enters pasword.      |
-|                | 4. System verifies pasword with the Better Life system.    |
-|                | 5. System grants access to the customer.  |
-| Alternate Flow | If the pasword is incorrect, the system prompts the customer to re-enter the pasword. |
+| Use Case ID    | UC-01                                                                                                                      |
+|----------------|----------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Authenticate User                                                                                                          |
+| Actors         | Customer                                                                                                                   |
+| Description    | The customer opens the app in the laptop and enter their password to authenticate their identity and access their account. |
+| Flow of Events | 1. Customer open the app in their laptop.                                                                                  |
+|                | 2. System prompts for password.                                                                                            |
+|                | 3. Customer enters password.                                                                                               |
+|                | 4. System verifies password with the NutriMate system.                                                                     |
+|                | 5. System grants access to the customer.                                                                                   |
+| Alternate Flow | If the password is incorrect, the system prompts the customer to re-enter the password.                                    |
+| Post-condition | The user is logged into their account                                                                                      |  
 
 | Use Case ID    | UC-03                                                                                                                   |
 |----------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -191,40 +192,68 @@ Include at least 5 use cases, each corresponding to a specific function.
 |                | The system queries the database and retrieves the nutritional information for the food item                             |
 |                | The system display nutritional details in pie charts & bar graphs showing                                               |
 | Alternate Flow | If the food is not found, the system display the following message "No results found" and prompts the user to try again |
-| Postcondition  | The user successfully retrieved the data.                              |
+| Post-condition | The user successfully retrieved the data.                                                                               |
 
-| Use Case ID    | UC-04                                                                                                                              |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------|
-| Use Case Name  | Filter by Nutrition Range                                                                                                          |
-| Actors         | User                                                                                                                               |
+| Use Case ID    | UC-04                                                                                                                               |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Filter by Nutrition Range                                                                                                           |
+| Actors         | User                                                                                                                                |
 | Description    | The user filters foods by selecting a nutrient and specifying a range of values. The system displays foods that match the criteria. |
-| Precondition   | The system must allow users to select nutrients and specify ranges.                                                                |
-|                | The system must be able to retrieve food items that fall within the selected range.                                                |
-|Trigger| The user selects a nutrient and specifies a range, then presses the "Apply Filter" button.                                                                       |
-| Flow of Events | The user navigates to the "Filter by Nutrient Range" option.                                                                       |
-|                | The user selects a nutrient (e.g., "protein").                                                                                     |
-|                | The user inputs a minimum value (e.g., "5g") and a maximum value (e.g., "20g").                                                    |
-|                | The user presses the "Apply Filter" button.                                                                                        |
-|                | The system queries the database and retrieves a list of foods that meet the nutrient range criteria.                               |
-|                | The system displays the filtered list of foods to the user.                                                                        |
-| Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjusting the range.                          |
-|Postcondition| The user successfully filters and views foods that meet their specified nutrient range.                                            |
+| Precondition   | The system must allow users to select nutrients and specify ranges.                                                                 |
+|                | The system must be able to retrieve food items that fall within the selected range.                                                 |
+| Trigger        | The user selects a nutrient and specifies a range, then presses the "Apply Filter" button.                                          |
+| Flow of Events | The user navigates to the "Filter by Nutrient Range" option.                                                                        |
+|                | The user selects a nutrient (e.g., "protein").                                                                                      |
+|                | The user inputs a minimum value (e.g., "5g") and a maximum value (e.g., "20g").                                                     |
+|                | The user presses the "Apply Filter" button.                                                                                         |
+|                | The system queries the database and retrieves a list of foods that meet the nutrient range criteria.                                |
+|                | The system displays the filtered list of foods to the user.                                                                         |
+| Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjusting the range.                           |
+| Post-condition | The user successfully filters and views foods that meet their specified nutrient range.                                             |
 
-| Use Case ID   | UC- 05                                                                                                       |
-|---------------|--------------------------------------------------------------------------------------------------------------|
-| Use Case Name | Filter by Nutritional Level                                                                                  |
-| Actors        | User                                                                                                         |
-| Description   | The user filters foods based on nutrient levels Low for a selected nutrient Sodium.                          |
-| Precondition  | The system categorizes nutrient levels (low, medium, high) based on predefined thresholds.                   |
-|               | The user has access to the filtering option in the interface.                                                |
-| Trigger       | The user selects a nutrient and chooses a level (Low, Mid, or High), then presses the "Apply Filter" button. |
+| Use Case ID    | UC- 05                                                                                                       |
+|----------------|--------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Filter by Nutritional Level                                                                                  |
+| Actors         | User                                                                                                         |
+| Description    | The user filters foods based on nutrient levels Low for a selected nutrient Sodium.                          |
+| Precondition   | The system categorizes nutrient levels (low, medium, high) based on predefined thresholds.                   |
+|                | The user has access to the filtering option in the interface.                                                |
+| Trigger        | The user selects a nutrient and chooses a level (Low, Mid, or High), then presses the "Apply Filter" button. |
 | Flow of Events | The user navigates to the "Filter by Nutritional Level" section.                                             |
-|               | The user selects a nutrient (e.g., "Vitamin A").                                                             |
-|               | The user selects one of the levels.                                                                          |
-|               | The user presses the "Apply Filter" button.                                                                  |
-|               | The system queries the database and retrieves a list of foods that meet the  criteria.                       |
+|                | The user selects a nutrient (e.g., "Vitamin A").                                                             |
+|                | The user selects one of the levels.                                                                          |
+|                | The user presses the "Apply Filter" button.                                                                  |
+|                | The system queries the database and retrieves a list of foods that meet the  criteria.                       |
 | Alternate Flow | If no foods match the criteria, the system notifies the user and prompts the user to adjust the criteria     |
-|Postcondition  | The user successfully filters foods based on the nutrient levels they selected                               |
+| Post-condition | The user successfully filters foods based on the nutrient levels they selected                               |
+
+| Use Case ID    | UC-06                                                                                                                                            |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | Daily nutrition calculator                                                                                                                       |
+| Actors         | User                                                                                                                                             |
+| Description    | The user inputs foods they have consumed throughout the day and calculates their total daily nutrient intake.                                    |
+| Trigger        | The user selects the foods they have consumed during the day and presses the "Add to my day" button to determine their daily nutritional intake. |
+| Precondition   | The system must store food items and allow users to input their consumption data.                                                                |
+|                | The system must calculate and display total nutrient intake.                                                                                     |
+|                | The user need to be inside the food information to add                                                                                           |
+| Flow of Events | The user presses "Add to my day" button.                                                                                                         |
+|                | The system sums the nutritional content (calories, protein, fats, carbohydrates, etc.) for the entire day.                                       |
+|                | The system displays the total daily nutrient intake                                                                                              |
+| Alternate Flow | If the user exceeds or falls short of certain nutrient, the system can notify them.                                                              |
+| Post-condition | The user successfully calculates their total daily nutrient intake and compares it to recommended values.                                        |
+
+| Use Case ID    | UC-07                         |
+|----------------|-------------------------------|
+| Use Case Name  | Logout                        |
+| Actors         | User                          |
+| Description    | The user logs out of the app  |
+| Trigger        | The customer selects "Logout. |
+| Precondition   | The customer is authenticated |
+| Flow of Events | The customer selects "Logout  |
+|                | The system ends the session   |
+| Post-condition | The user is logged out        |
+
+
 
 
 ## 3.	Software Design and System Components 
@@ -574,7 +603,7 @@ Overall, this structure allows for easy scalability and maintainability, where n
 
 **Food Logging**: Allows users to input and track their meals, and view the nutrient content of their diet.
 
-**Summary**: Displays aggregate information such as calorie intake, nutrient breakdown, and exercise metrics, giving users a comprehensive view of their progress.
+**Summary**: Displays aggregate information such as calorie intake, nutrient breakdown and giving users a comprehensive view of their progress.
 
 **Charts & Analytics**: Provides visual insights like trends and nutrient analysis to help users better understand their dietary habits.
 
@@ -598,12 +627,20 @@ Structural Design:
 ### 4.2	Visual Design
 Include all wireframes or mock-ups of the interface. Provide a discussion, explanation, and justification for your design choices. Hand-drawn wireframes are acceptable.
 
-- Interface Components: Clearly label all components.
-- Screens/Menus: Provide wireframes for different screens, menus, and options.
-- Design Details: Focus on the layout and size of components; color and graphics are not required. 
+The top section, "Check Calories and Nutritional Data," is designed to allow users to search for specific foods and view detailed nutritional information. It features a search bar where users can type the name of a food, such as "omelet," to fetch its nutritional data. The nutritional breakdown is visually represented using a pie chart, showing the distribution of key nutrients such as fats, proteins, carbohydrates, and sugars. Additionally, a bar graph is used to display detailed micronutrient information, including elements like Selenium, Cholesterol, and Potassium, enabling users to understand the concentrations of these nutrients in the food.
+
+The middle section, titled "Find Food that Suits You," allows users to filter foods based on their nutritional needs, either by setting specific nutrient ranges or by filtering according to nutritional content levels. For the range filter, users can specify a nutrient, such as protein, and define minimum and maximum values, after which foods within that range are displayed. The level filter, on the other hand, enables users to categorize foods by "low," "mid," or "high" levels for various nutrients like fat, protein, carbohydrates, sugars, and nutritional density. Based on the user's selections, matching foods are displayed with accompanying images and brief descriptions, such as "low fat & sugars" or "high protein."
+
+The bottom section, labeled "Summary," provides a recap of the user's health and dietary activity. This section shows the user's daily calorie intake using a progress circle (e.g., 1500 calories consumed). Additionally, it offers a nutritional breakdown of the user's food intake, showing consumed nutrients like carbohydrates, proteins, and fats, alongside suggested daily intake values for these nutrients.
 
 Example:  
-![Visual Design](./visual_design.png)
+![Visual Design](./Screen1.png)
+![Visual Design](./Screen2.png)
+![Visual Design](./Screen3.png)
+![Visual Design](./Screen4.png)
+![Visual Design](./Screen5.png)
+![Visual Design](./Screen6.png)
+![Visual Design](./Screen7.png)
 
 
 
