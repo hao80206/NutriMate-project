@@ -46,38 +46,42 @@ class CalcFrame(MyFrame1):
 
         # Resize grid columns to fit content
         self.m_grid1.AutoSize()
-        self.min_val_ctrl = wx.TextCtrl(self, value="0")
-        self.max_val_ctrl = wx.TextCtrl(self, value="1000")
 
-        # Add a button to trigger the range filter
-        self.filter_btn = wx.Button(self, label="Filter by Calories")
-        self.filter_btn.Bind(wx.EVT_BUTTON, self.OnRangeFilter)
 
         self.Show(True)
         self.Layout()
 
     def OnSearch(self, event):
-
         keyword = self.m_textCtrl1.GetValue()
-        nutrient = self.m_textCtrl2.GetValue()
-        min_value = float(self.m_textCtrl3.GetValue())
-        max_value = float(self.m_textCtrl4.GetValue())
+        nutrient_name = self.m_textCtrl2.GetValue().strip()
 
         df = self.table.data
-        loc = search_data(df, keyword)  # Ensure search_data is updated with the correct column name
-        look = search_data(df, nutrient)
-        search_result = df[loc, look]
-        tabl = DataTable(search_result)
 
+          # Ensure search_data is updated with the correct column name
+        if keyword:
+            loc = search_data(df, keyword)
+            df = df[loc]
+        if nutrient_name in df.columns:
+            try:
+                min_value = float(self.m_textCtrl3.GetValue())
+                max_value = float(self.m_textCtrl4.GetValue())
+            except ValueError:
+                wx.MessageBox("Please enter valid numeric values for the range.", "Input Error", wx.OK | wx.ICON_ERROR)
+                return
 
+            #filter based on nutrient
+            nutrient = df[nutrient_name]
+            loc = (nutrient>=min_value) & (nutrient<=max_value)
+            df = df.loc[loc]
 
-        # Clear and update the second grid with the search results
-        self.m_grid1.ClearGrid()
-        self.m_grid1.SetTable(tabl, takeOwnership=True)
-        self.m_grid1.AutoSize()
-
-
-
+        if not df.empty:
+            tabl = DataTable(df)
+            self.m_grid1.ClearGrid()
+            self.m_grid1.SetTable(tabl, takeOwnership=True)
+            self.m_grid1.AutoSize()
+        else:
+            wx.MessageBox(f"No data found for '{nutrient_name}' within the given range.", "No Results",
+                          wx.OK | wx.ICON_INFORMATION)
 
 if __name__ == "__main__":
     app = wx.App()
