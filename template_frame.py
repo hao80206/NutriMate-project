@@ -150,7 +150,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_panel1.SetSizer( bSizer2 )
         self.m_panel1.Layout()
         bSizer2.Fit( self.m_panel1 )
-        self.m_notebook1.AddPage( self.m_panel1, _(u"Food Search"), True )
+        self.m_notebook1.AddPage( self.m_panel1, _(u"Food Search"), False )
         self.m_panel2 = wx.Panel( self.m_notebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
         bSizer10 = wx.BoxSizer( wx.VERTICAL )
 
@@ -185,24 +185,14 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer10.Add( bSizer11, 0, wx.EXPAND, 5 )
 
-        bSizer12 = wx.BoxSizer( wx.VERTICAL )
-
-        self.m_staticText19 = wx.StaticText( self.m_panel2, wx.ID_ANY, _(u"Nutrition Breakdown:"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.m_staticText19.Wrap( -1 )
-
-        bSizer12.Add( self.m_staticText19, 1, wx.ALL, 5 )
-
         self.m_panel4 = wx.Panel( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        bSizer12.Add( self.m_panel4, 1, wx.ALL|wx.EXPAND, 5 )
-
-
-        bSizer10.Add( bSizer12, 0, wx.EXPAND, 5 )
+        bSizer10.Add( self.m_panel4, 1, wx.ALL|wx.EXPAND, 10 )
 
 
         self.m_panel2.SetSizer( bSizer10 )
         self.m_panel2.Layout()
         bSizer10.Fit( self.m_panel2 )
-        self.m_notebook1.AddPage( self.m_panel2, _(u"Nutrition Info Display"), False )
+        self.m_notebook1.AddPage( self.m_panel2, _(u"Nutrition Info Display"), True )
         self.m_panel3 = wx.Panel( self.m_notebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
         bSizer15 = wx.BoxSizer( wx.VERTICAL )
 

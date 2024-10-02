@@ -43,6 +43,10 @@ class CalcFrame(MyFrame1):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        # Set the size of the frame (width, height)
+        self.SetSize(1000, 800)
+        self.Centre()
+
         # Read the CSV file into a pandas DataFrame
         self.df = pd.read_csv(r".\Food_Nutrition_Dataset.csv")
 
@@ -104,36 +108,39 @@ class CalcFrame(MyFrame1):
 
 
         nutri = self.plot_data_line(selected_food_data)
-        h, w = self.m_panel2.GetSize()
-        # Resize the MatpotLib figure to fot within the m_panel2 dimensions
+        h, w = self.m_panel4.GetSize()
+        # Resize the MatpotLib figure to fot within the m_panel4 dimensions
         nutri.set_size_inches(h / nutri.get_dpi(), w / nutri.get_dpi())
 
-        # Create a FigureCanvasWxAgg object, which embeds the MatpotLib figure within the m_panel2 panel.
-        canvas = FigureCanvasWxAgg(self.m_panel2, -1, nutri)
+        # Create a FigureCanvasWxAgg object, which embeds the MatpotLib figure within the m_panel4 panel.
+        canvas = FigureCanvasWxAgg(self.m_panel4, -1, nutri)
 
         # Sets the size of the canvas to match the size of the panel.
-        canvas.SetSize(self.m_panel2.GetSize())
+        canvas.SetSize(self.m_panel4.GetSize())
 
         # Adjust the layout again to ensure all components are correctly positioned after adding the canvas.
         self.Layout()
 
     def plot_data_line(self, selected_food_data):
         # X values:
-        nutri_type = ["Fat", "Protein", "Carbohydrate"]
+        nutri_type = ["Fat", "Protein", "Carbo"]
         # Y values:
         nutri_value = [float(selected_food_data[2]), float(selected_food_data[8]), float(selected_food_data[6])]
 
-        explode = (0.1, 0, 0)
+        explode = (0.1, 0.1, 0.1)
         colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
 
         nutri, (ax1, ax2) = plt.subplots(1, 2)
 
-        ax1.pie(nutri_value, explode=explode, labels=nutri_type, colors=colors, autopct='%1.1f%%', shadow=True)
-        ax1.set_title("Pie Chart")
+        ax1.bar(nutri_type, nutri_value)
+        ax1.set_title(u'Nutrition Level')
+        ax1.set_xlabel("Nutrition")
+        ax1.set_ylabel("Value (in gram)")
 
-        ax2.bar(nutri_type, nutri_value)
-        ax2.set_title(u'Bar')
-        ax2.set_xlabel("Nutrition")
+        ax2.pie(nutri_value, explode=explode, labels=nutri_type, colors=colors, autopct='%1.1f%%', shadow=True)
+        ax2.set_title("Nutritional Percentage")
+
+
         return nutri
 
 
