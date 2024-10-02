@@ -2,6 +2,13 @@ import wx
 import wx.grid
 import pandas as pd
 import re
+import matplotlib
+
+matplotlib.use('WXAgg')  # allows Matplotlib to render plots within wxPython.
+# to embed a Matplotlib figure into a wxPanel in a wxPython application.
+
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg
+import matplotlib.pyplot as plt
 
 from all_functions import search_data
 from template_frame import MyFrame1
@@ -93,13 +100,41 @@ class CalcFrame(MyFrame1):
         for col in range(self.m_grid1.GetNumberCols()):
             selected_food_data.append(self.m_grid1.GetCellValue(row, col))
 
-        # Pass `selected_food_data` to display nutri info
-        self.display_nutri_info(selected_food_data)
+        self.m_staticText15.SetLabel(selected_food_data[0])  # Display food name
 
-        event.Skip()  # Continue event processing
 
-    def display_nutri_info(self, food_data):
-        self.m_staticText15.SetLabel(food_data[0])  # Example: display food name
+        nutri = self.plot_data_line(selected_food_data)
+        h, w = self.m_panel2.GetSize()
+        # Resize the MatpotLib figure to fot within the m_panel2 dimensions
+        nutri.set_size_inches(h / nutri.get_dpi(), w / nutri.get_dpi())
+
+        # Create a FigureCanvasWxAgg object, which embeds the MatpotLib figure within the m_panel2 panel.
+        canvas = FigureCanvasWxAgg(self.m_panel2, -1, nutri)
+
+        # Sets the size of the canvas to match the size of the panel.
+        canvas.SetSize(self.m_panel2.GetSize())
+
+        # Adjust the layout again to ensure all components are correctly positioned after adding the canvas.
+        self.Layout()
+
+    def plot_data_line(self, selected_food_data):
+        # X values:
+        nutri_type = ["Fat", "Protein", "Carbohydrate"]
+        # Y values:
+        nutri_value = [float(selected_food_data[2]), float(selected_food_data[8]), float(selected_food_data[6])]
+
+        explode = (0.1, 0, 0)
+        colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
+
+        nutri, (ax1, ax2) = plt.subplots(1, 2)
+
+        ax1.pie(nutri_value, explode=explode, labels=nutri_type, colors=colors, autopct='%1.1f%%', shadow=True)
+        ax1.set_title("Pie Chart")
+
+        ax2.bar(nutri_type, nutri_value)
+        ax2.set_title(u'Bar')
+        ax2.set_xlabel("Nutrition")
+        return nutri
 
 
 if __name__ == "__main__":

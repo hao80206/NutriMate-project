@@ -193,7 +193,7 @@ class MyFrame1 ( wx.Frame ):
         bSizer12.Add( self.m_staticText19, 1, wx.ALL, 5 )
 
         self.m_panel4 = wx.Panel( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        bSizer12.Add( self.m_panel4, 0, wx.ALL|wx.EXPAND, 5 )
+        bSizer12.Add( self.m_panel4, 1, wx.ALL|wx.EXPAND, 5 )
 
 
         bSizer10.Add( bSizer12, 0, wx.EXPAND, 5 )
@@ -249,6 +249,7 @@ class MyFrame1 ( wx.Frame ):
         # Connect Events
         self.m_button1.Bind( wx.EVT_BUTTON, self.OnSearch )
         self.m_radioBox1.Bind( wx.EVT_RADIOBOX, self.RangeLevel )
+        self.m_grid1.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.on_select_food )
         self.m_button2.Bind( wx.EVT_BUTTON, self.Calculate )
 
     def __del__( self ):
@@ -260,6 +261,9 @@ class MyFrame1 ( wx.Frame ):
         event.Skip()
 
     def RangeLevel( self, event ):
+        event.Skip()
+
+    def on_select_food( self, event ):
         event.Skip()
 
     def Calculate( self, event ):
