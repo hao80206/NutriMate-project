@@ -106,7 +106,6 @@ class CalcFrame(MyFrame1):
 
         self.m_staticText15.SetLabel(selected_food_data[0])  # Display food name
 
-
         nutri = self.plot_data_line(selected_food_data)
         h, w = self.m_panel4.GetSize()
         # Resize the MatpotLib figure to fot within the m_panel4 dimensions
@@ -122,24 +121,54 @@ class CalcFrame(MyFrame1):
         self.Layout()
 
     def plot_data_line(self, selected_food_data):
-        # X values:
-        nutri_type = ["Fat", "Protein", "Carbo"]
-        # Y values:
-        nutri_value = [float(selected_food_data[2]), float(selected_food_data[8]), float(selected_food_data[6])]
 
-        explode = (0.1, 0.1, 0.1)
-        colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
+        # macronutrients
+        # X values:
+        macro_nutri_type = ["Fat", "Protein", "Carbo", "Sugars", "Fiber"]
+        # Y values:
+        macro_nutri_value = [float(selected_food_data[2]), float(selected_food_data[8]), float(selected_food_data[6]),
+                             float(selected_food_data[7]), float(selected_food_data[9])]
+
+
+        # TODO: update Iron from g into mg!
+        # TODO: update Iron from g into mg!
+        # TODO: update Iron from g into mg!
+
+        # Define the specific micronutrients and their corresponding values
+        micronutrient_data = {
+            "Cholesterol": float(selected_food_data[10]),
+            "Sodium": float(selected_food_data[11]),
+            "Vitamin A": float(selected_food_data[13]),
+            "Vitamin C": float(selected_food_data[21]),
+            "Calcium": float(selected_food_data[25]),
+            "Iron": float(selected_food_data[27]),
+            "Zinc": float(selected_food_data[33])
+        }
+
+        # Calculate others_value only for specified micronutrients below 1
+        others_value = sum(value for nutrient, value in micronutrient_data.items() if value <= 1)
+
+        # Filter out micronutrients that are below 1% and prepare lists for plotting
+        micro_nutri_value = [value for value in micronutrient_data.values() if value > 1]
+        micro_nutri_type = [nutrient for nutrient, value in micronutrient_data.items() if value > 1]
+
+        # Add 'Others' to the lists if there are values to sum
+        if others_value > 0:
+            micro_nutri_type.append("Others")
+            micro_nutri_value.append(others_value)
 
         nutri, (ax1, ax2) = plt.subplots(1, 2)
 
-        ax1.bar(nutri_type, nutri_value)
-        ax1.set_title(u'Nutrition Level')
+        ax1.bar(macro_nutri_type, macro_nutri_value)
+        ax1.set_title(u'Macro Nutrition Level')
         ax1.set_xlabel("Nutrition")
         ax1.set_ylabel("Value (in gram)")
 
-        ax2.pie(nutri_value, explode=explode, labels=nutri_type, colors=colors, autopct='%1.1f%%', shadow=True)
-        ax2.set_title("Nutritional Percentage")
+        explode = (0.1,) * len(micro_nutri_value)
+        colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'tomato', 'mediumseagreen', 'slateblue']
 
+        ax2.pie(micro_nutri_value, explode=explode, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%', shadow=True)
+        ax2.set_title("Micro Nutrition Percentage")
 
         return nutri
 
