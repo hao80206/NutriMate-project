@@ -39,7 +39,6 @@ class CalcFrame(MyFrame1):
         # Read the CSV file into a pandas DataFrame
         self.df = pd.read_csv(r".\Food_Nutrition_Dataset.csv")
 
-
         # Set the table data in the wxGrid
         self.table = DataTable(self.df)
         self.m_grid1.SetTable(self.table, takeOwnership=True)
@@ -47,6 +46,8 @@ class CalcFrame(MyFrame1):
         # Resize grid columns to fit content
         self.m_grid1.AutoSize()
 
+        # Bind the grid selection event
+        self.m_grid1.Bind(wx.grid.EVT_GRID_SELECT_CELL, self.on_select_food)
 
         self.Show(True)
         self.Layout()
@@ -57,7 +58,7 @@ class CalcFrame(MyFrame1):
 
         df = self.table.data
 
-          # Ensure search_data is updated with the correct column name
+        # Ensure search_data is updated with the correct column name
         if keyword:
             loc = search_data(df, keyword)
             df = df[loc]
@@ -69,9 +70,9 @@ class CalcFrame(MyFrame1):
                 wx.MessageBox("Please enter valid numeric values for the range.", "Input Error", wx.OK | wx.ICON_ERROR)
                 return
 
-            #filter based on nutrient
+            # filter based on nutrient
             nutrient = df[nutrient_name]
-            loc = (nutrient>=min_value) & (nutrient<=max_value)
+            loc = (nutrient >= min_value) & (nutrient <= max_value)
             df = df.loc[loc]
 
         if not df.empty:
@@ -82,6 +83,24 @@ class CalcFrame(MyFrame1):
         else:
             wx.MessageBox(f"No data found for '{nutrient_name}' within the given range.", "No Results",
                           wx.OK | wx.ICON_INFORMATION)
+
+    def on_select_food(self, event):
+        """Handles the selection of a food product from the grid."""
+        row = event.GetRow()  # Get the selected row index
+        selected_food_data = []
+
+        # Get the data for the selected row (all columns)
+        for col in range(self.m_grid1.GetNumberCols()):
+            selected_food_data.append(self.m_grid1.GetCellValue(row, col))
+
+        # Pass `selected_food_data` to display nutri info
+        self.display_nutri_info(selected_food_data)
+
+        event.Skip()  # Continue event processing
+
+    def display_nutri_info(self, food_data):
+        self.m_staticText15.SetLabel(food_data[0])  # Example: display food name
+
 
 if __name__ == "__main__":
     app = wx.App()
