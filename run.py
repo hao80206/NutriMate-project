@@ -10,7 +10,7 @@ matplotlib.use('WXAgg')  # allows Matplotlib to render plots within wxPython.
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg
 import matplotlib.pyplot as plt
 
-from all_functions import search_data
+from all_functions import search_data, prepare_macro_nutrient_data, prepare_micro_nutrient_data
 from template_frame import MyFrame1
 
 
@@ -96,81 +96,30 @@ class CalcFrame(MyFrame1):
                           wx.OK | wx.ICON_INFORMATION)
 
     def on_select_food(self, event):
-        """Handles the selection of a food product from the grid."""
-        row = event.GetRow()  # Get the selected row index
-        selected_food_data = []
+        row = event.GetRow()
+        selected_food_data = [self.m_grid1.GetCellValue(row, col) for col in range(self.m_grid1.GetNumberCols())]
+        self.m_staticText15.SetLabel(selected_food_data[0])
 
-        # Get the data for the selected row (all columns)
-        for col in range(self.m_grid1.GetNumberCols()):
-            selected_food_data.append(self.m_grid1.GetCellValue(row, col))
-
-        self.m_staticText15.SetLabel(selected_food_data[0])  # Display food name
-
-        nutri = self.plot_data_line(selected_food_data)
-        h, w = self.m_panel4.GetSize()
-        # Resize the MatpotLib figure to fot within the m_panel4 dimensions
-        nutri.set_size_inches(h / nutri.get_dpi(), w / nutri.get_dpi())
-
-        # Create a FigureCanvasWxAgg object, which embeds the MatpotLib figure within the m_panel4 panel.
-        canvas = FigureCanvasWxAgg(self.m_panel4, -1, nutri)
-
-        # Sets the size of the canvas to match the size of the panel.
-        canvas.SetSize(self.m_panel4.GetSize())
-
-        # Adjust the layout again to ensure all components are correctly positioned after adding the canvas.
-        self.Layout()
-
-    def plot_data_line(self, selected_food_data):
-
-        # macronutrients
-        # X values:
-        macro_nutri_type = ["Fat", "Protein", "Carbo", "Sugars", "Fiber"]
-        # Y values:
-        macro_nutri_value = [float(selected_food_data[2]), float(selected_food_data[8]), float(selected_food_data[6]),
-                             float(selected_food_data[7]), float(selected_food_data[9])]
-
-
-        # TODO: update Iron from g into mg!
-        # TODO: update Iron from g into mg!
-        # TODO: update Iron from g into mg!
-
-        # Define the specific micronutrients and their corresponding values
-        micronutrient_data = {
-            "Cholesterol": float(selected_food_data[10]),
-            "Sodium": float(selected_food_data[11]),
-            "Vitamin A": float(selected_food_data[13]),
-            "Vitamin C": float(selected_food_data[21]),
-            "Calcium": float(selected_food_data[25]),
-            "Iron": float(selected_food_data[27]),
-            "Zinc": float(selected_food_data[33])
-        }
-
-        # Calculate others_value only for specified micronutrients below 1
-        others_value = sum(value for nutrient, value in micronutrient_data.items() if value <= 1)
-
-        # Filter out micronutrients that are below 1% and prepare lists for plotting
-        micro_nutri_value = [value for value in micronutrient_data.values() if value > 1]
-        micro_nutri_type = [nutrient for nutrient, value in micronutrient_data.items() if value > 1]
-
-        # Add 'Others' to the lists if there are values to sum
-        if others_value > 0:
-            micro_nutri_type.append("Others")
-            micro_nutri_value.append(others_value)
+        macro_nutri_type, macro_nutri_value = prepare_macro_nutrient_data(selected_food_data)
+        micro_nutri_type, micro_nutri_value = prepare_micro_nutrient_data(selected_food_data)
 
         nutri, (ax1, ax2) = plt.subplots(1, 2)
-
         ax1.bar(macro_nutri_type, macro_nutri_value)
-        ax1.set_title(u'Macro Nutrition Level')
+        ax1.set_title('Macro Nutrition Level')
         ax1.set_xlabel("Nutrition")
         ax1.set_ylabel("Value (in gram)")
 
         explode = (0.1,) * len(micro_nutri_value)
         colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'tomato', 'mediumseagreen', 'slateblue']
-
-        ax2.pie(micro_nutri_value, explode=explode, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%', shadow=True)
+        ax2.pie(micro_nutri_value, explode=explode, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%',
+                shadow=True)
         ax2.set_title("Micro Nutrition Percentage")
 
-        return nutri
+        h, w = self.m_panel4.GetSize()
+        nutri.set_size_inches(h / nutri.get_dpi(), w / nutri.get_dpi())
+        canvas = FigureCanvasWxAgg(self.m_panel4, -1, nutri)
+        canvas.SetSize(self.m_panel4.GetSize())
+        self.Layout()
 
 
 if __name__ == "__main__":
