@@ -111,7 +111,7 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer9 = wx.BoxSizer( wx.VERTICAL )
 
-        m_radioBox1Choices = [ _(u"Low"), _(u"Mid"), _(u"High") ]
+        m_radioBox1Choices = [ _(u"None"), _(u"Low"), _(u"Mid"), _(u"High") ]
         self.m_radioBox1 = wx.RadioBox( self.m_panel1, wx.ID_ANY, _(u"Nutrients Range Level"), wx.DefaultPosition, wx.DefaultSize, m_radioBox1Choices, 1, wx.RA_SPECIFY_COLS )
         self.m_radioBox1.SetSelection( 0 )
         bSizer9.Add( self.m_radioBox1, 1, wx.ALL|wx.EXPAND, 5 )
