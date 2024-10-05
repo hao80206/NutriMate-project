@@ -99,7 +99,7 @@ class CalcFrame(MyFrame1):
         df = self.table.data
         row = event.GetRow()
         selected_food_data = [self.m_grid1.GetCellValue(row, col) for col in range(self.m_grid1.GetNumberCols())]
-        self.m_staticText15.SetLabel(selected_food_data[0])
+        self.m_staticText15.SetLabel(selected_food_data[0].upper())
 
         macro_nutri_type, macro_nutri_value = prepare_macro_nutrient_data(df, selected_food_data)
         micro_nutri_type, micro_nutri_value = prepare_micro_nutrient_data(df, selected_food_data)
@@ -110,12 +110,18 @@ class CalcFrame(MyFrame1):
         # ax1.set_ylabel("Nutrients")
         ax1.set_xlabel("Value (in gram)")
 
-        explode = (0.25,) + (0,) * (len(micro_nutri_value)-1) # only applied for the first two
         colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue',
                   'tomato', 'mediumseagreen', 'slateblue', 'lightcoral', 'tomato']
-        ax2.pie(micro_nutri_value, explode=explode, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%',
-                shadow=True)
-        ax2.set_title("Micro Nutrients Percentage")
+
+        if sum(micro_nutri_value) == 0:
+            ax2.pie(micro_nutri_value, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%',
+                    shadow=True)
+            ax2.set_title("Contains No Micro Nutrients ")
+        else:
+            explode = (0.25,) + (0,) * (len(micro_nutri_value)-1) # only applied for the first two
+            ax2.pie(micro_nutri_value, explode=explode, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%',
+                    shadow=True)
+            ax2.set_title("Micro Nutrients Percentage")
 
         h, w = self.m_panel4.GetSize()
         nutri.set_size_inches(h / nutri.get_dpi(), w / nutri.get_dpi())

@@ -161,7 +161,7 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer10.Add( self.m_staticText11, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
 
-        self.m_staticText24 = wx.StaticText( self.m_panel2, wx.ID_ANY, _(u"Nutrition Info Display"), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText24 = wx.StaticText( self.m_panel2, wx.ID_ANY, _(u"Nutrients Info Display"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText24.Wrap( -1 )
 
         self.m_staticText24.SetFont( wx.Font( 10, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_LIGHT, False, "Bookman Old Style" ) )
@@ -170,15 +170,10 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer11 = wx.BoxSizer( wx.HORIZONTAL )
 
-        self.m_staticText12 = wx.StaticText( self.m_panel2, wx.ID_ANY, _(u"Food Name :"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.m_staticText12.Wrap( -1 )
-
-        self.m_staticText12.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-
-        bSizer11.Add( self.m_staticText12, 0, wx.ALL, 5 )
-
         self.m_staticText15 = wx.StaticText( self.m_panel2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText15.Wrap( -1 )
+
+        self.m_staticText15.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 
         bSizer11.Add( self.m_staticText15, 0, wx.ALL, 5 )
 
