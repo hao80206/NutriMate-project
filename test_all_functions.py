@@ -1,47 +1,42 @@
 from all_functions import prepare_micro_nutrient_data, prepare_macro_nutrient_data
+import pandas as pd
+
+# Load the DataFrame from CSV
+df = pd.read_csv(r".\Food_Nutrition_Dataset.csv")
+
+# Use the columns from the DataFrame directly
+columns = list(df.columns)
 
 
 def test_get_micro_pos():
-    selected_food_data = [
-        "cream cheese", 51.0, 5.0, 2.9, 1.3, 0.2, 0.8, 0.5, 0.9, 0.0,
-        14.6, 0.016, 7.6, 0.2, 0.033, 0.064, 0.092, 0.097, 0.084,
-        0.052, 0.096, 0.004, 0.0, 0.1, 0.008, 14.1, 0.082, 0.027,
-        1.3, 0.091, 15.5, 19.1, 0.039, 7.07
-    ]
+    selected_food_data = df.iloc[0].tolist()  # Cream Cheese
 
-    # Convert Sodium from g into mg
-    converted_sodium = selected_food_data[11] * 100  # Index 11 is Sodium
+    # Hardcode the expected micronutrient types and values based on sorted results
+    expected_micro_type = ['Others', 'Copper', 'Potassium', 'Sodium', 'Selenium']
+    expected_micro_values = [2.369, 14.1, 15.5, 16.0, 19.1]  # Sodium converted to mg and sum of "Others" values
 
-    micronutrient_values = [
-        selected_food_data[10],  # Cholesterol
-        converted_sodium,
-        selected_food_data[13],  # Vitamin A
-        selected_food_data[21],  # Vitamin C
-        selected_food_data[25],  # Calcium
-        selected_food_data[27],  # Iron
-        selected_food_data[33]  # Zinc
-    ]
+    # Get the actual results from the function
+    micro_nutri_type, micro_nutri_value = prepare_micro_nutrient_data(df, selected_food_data)
 
-    others_sum = sum(value for value in micronutrient_values if value <= 10)  # Sum values <= 10
-    expected_micro_type = ["Cholesterol", "Calcium", "Others"]
-    expected_micro_values = [14.6, 14.1, others_sum]
-
-    micro_nutri_type, micro_nutri_value = prepare_micro_nutrient_data(selected_food_data)
-    assert micro_nutri_type == expected_micro_type
-    assert micro_nutri_value == expected_micro_values
+    # Assert the types and values
+    assert micro_nutri_type == expected_micro_type, "Micronutrient type did not match expected sorted results"
+    assert micro_nutri_value == expected_micro_values, "Micronutrient value did not match expected sorted results"
 
 
 def test_get_macro_pos():
-    selected_food_data = [
-        "cream cheese", 51.0, 5.0, 2.9, 1.3, 0.2, 0.8, 0.5, 0.9, 0.0,
-        14.6, 0.016, 7.6, 0.2, 0.033, 0.064, 0.092, 0.097, 0.084,
-        0.052, 0.096, 0.004, 0.0, 0.1, 0.008, 14.1, 0.082, 0.027,
-        1.3, 0.091, 15.5, 19.1, 0.039, 7.07
-    ]
+    selected_food_data = df.iloc[0].tolist()  # Cream Cheese
 
-    expected_macro_type = ["Fat", "Protein", "Carbo", "Sugars", "Fiber"]
-    expected_macro_value = [5.0, 0.9, 0.8, 0.5, 0.0]
+    expected_macro_type = ['Dietary Fiber',
+                           'Polyunsaturated Fats',
+                           'Sugars',
+                           'Carbohydrates',
+                           'Protein',
+                           'Monounsaturated Fats',
+                           'Saturated Fats',
+                           'Fat',
+                           'Water']
+    expected_macro_value = [0.0, 0.2, 0.5, 0.8, 0.9, 1.3, 2.9, 5.0, 7.6]
 
-    macro_nutri_type, macro_nutri_value = prepare_macro_nutrient_data(selected_food_data)
-    assert macro_nutri_type == expected_macro_type
-    assert macro_nutri_value == expected_macro_value
+    macro_nutri_type, macro_nutri_value = prepare_macro_nutrient_data(df, selected_food_data)
+    assert macro_nutri_type == expected_macro_type, "Macronutrient type did not match expected sorted results"
+    assert macro_nutri_value == expected_macro_value, "Macronutrient value did not match expected sorted results"
