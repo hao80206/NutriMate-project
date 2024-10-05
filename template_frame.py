@@ -21,7 +21,7 @@ _ = gettext.gettext
 class MyFrame1 ( wx.Frame ):
 
     def __init__( self, parent ):
-        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,530 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 880,594 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
         self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -52,7 +52,7 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer3.Add( self.m_staticText3, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
-        self.m_textCtrl1 = wx.TextCtrl( self.m_panel1, wx.ID_ANY, _(u" "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_textCtrl1 = wx.TextCtrl( self.m_panel1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer3.Add( self.m_textCtrl1, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
         self.m_button1 = wx.Button( self.m_panel1, wx.ID_ANY, _(u"Search"), wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -150,7 +150,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_panel1.SetSizer( bSizer2 )
         self.m_panel1.Layout()
         bSizer2.Fit( self.m_panel1 )
-        self.m_notebook1.AddPage( self.m_panel1, _(u"Food Search"), True )
+        self.m_notebook1.AddPage( self.m_panel1, _(u"Food Search"), False )
         self.m_panel2 = wx.Panel( self.m_notebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
         bSizer10 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -225,37 +225,156 @@ class MyFrame1 ( wx.Frame ):
         self.m_panel3 = wx.Panel( self.m_notebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
         bSizer15 = wx.BoxSizer( wx.VERTICAL )
 
-        self.m_staticText21 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Food Calculator :"), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText21 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Tell me what you had today!!"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText21.Wrap( -1 )
 
         self.m_staticText21.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
-        bSizer15.Add( self.m_staticText21, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
-
-        self.m_staticText22 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Food Product:"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.m_staticText22.Wrap( -1 )
-
-        bSizer15.Add( self.m_staticText22, 0, wx.ALL, 5 )
-
-        self.m_textCtrl5 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        bSizer15.Add( self.m_textCtrl5, 0, wx.ALL, 5 )
-
-        self.m_staticText23 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Weight (in grams) :"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.m_staticText23.Wrap( -1 )
-
-        bSizer15.Add( self.m_staticText23, 0, wx.ALL, 5 )
-
-        self.m_textCtrl6 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        bSizer15.Add( self.m_textCtrl6, 0, wx.ALL, 5 )
+        bSizer15.Add( self.m_staticText21, 0, wx.EXPAND, 5)
 
         self.m_button2 = wx.Button( self.m_panel3, wx.ID_ANY, _(u"Calculate"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer15.Add( self.m_button2, 0, wx.ALL, 5 )
+
+        bSizer13 = wx.BoxSizer( wx.HORIZONTAL )
+
+        self.m_staticText201 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Breakfast: "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText201.Wrap( -1 )
+
+        bSizer13.Add( self.m_staticText201, 0, wx.ALL, 5 )
+
+        self.m_textCtrl7 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer13.Add( self.m_textCtrl7, 0, wx.ALL, 5 )
+
+        self.m_staticText211 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText211.Wrap( -1 )
+
+        bSizer13.Add( self.m_staticText211, 0, wx.ALL, 5 )
+
+        self.m_textCtrl8 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer13.Add( self.m_textCtrl8, 0, wx.ALL, 5 )
+
+
+        bSizer15.Add( bSizer13, 1, wx.EXPAND, 5 )
+
+        bSizer14 = wx.BoxSizer( wx.HORIZONTAL )
+
+        self.m_staticText22 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Lunch :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText22.Wrap( -1 )
+
+        bSizer14.Add( self.m_staticText22, 0, wx.ALL, 5 )
+
+        self.m_textCtrl9 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer14.Add( self.m_textCtrl9, 0, wx.ALL, 5 )
+
+        self.m_staticText23 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText23.Wrap( -1 )
+
+        bSizer14.Add( self.m_staticText23, 0, wx.ALL, 5 )
+
+        self.m_textCtrl12 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer14.Add( self.m_textCtrl12, 0, wx.ALL, 5 )
+
+
+        bSizer15.Add( bSizer14, 1, wx.EXPAND, 5 )
+
+        bSizer151 = wx.BoxSizer( wx.HORIZONTAL )
+
+        self.m_staticText24 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Dinner :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText24.Wrap( -1 )
+
+        bSizer151.Add( self.m_staticText24, 0, wx.ALL, 5 )
+
+        self.m_textCtrl10 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer151.Add( self.m_textCtrl10, 0, wx.ALL, 5 )
+
+        self.m_staticText25 = wx.StaticText( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText25.Wrap( -1 )
+
+        bSizer151.Add( self.m_staticText25, 0, wx.ALL, 5 )
+
+        self.m_staticText231 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText231.Wrap( -1 )
+
+        bSizer151.Add( self.m_staticText231, 0, wx.ALL, 5 )
+
+        self.m_textCtrl11 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer151.Add( self.m_textCtrl11, 0, wx.ALL, 5 )
+
+
+        bSizer15.Add( bSizer151, 1, wx.EXPAND, 5 )
+
+        bSizer16 = wx.BoxSizer( wx.HORIZONTAL )
+
+        self.m_staticText251 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Height :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText251.Wrap( -1 )
+
+        bSizer16.Add( self.m_staticText251, 0, wx.ALL, 5 )
+
+        self.m_textCtrl111 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer16.Add( self.m_textCtrl111, 0, wx.ALL, 5 )
+
+        self.m_staticText26 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Weight :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText26.Wrap( -1 )
+
+        bSizer16.Add( self.m_staticText26, 0, wx.ALL, 5 )
+
+        self.m_textCtrl121 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer16.Add( self.m_textCtrl121, 0, wx.ALL, 5 )
+
+        self.m_staticText30 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Age :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText30.Wrap( -1 )
+
+        bSizer16.Add( self.m_staticText30, 0, wx.ALL, 5 )
+
+        self.m_textCtrl14 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer16.Add( self.m_textCtrl14, 0, wx.ALL, 5 )
+
+        self.m_staticText28 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Sex : "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText28.Wrap( -1 )
+
+        bSizer16.Add( self.m_staticText28, 0, wx.ALL, 5 )
+
+        self.m_checkBox1 = wx.CheckBox( self.m_panel3, wx.ID_ANY, _(u"Female"), wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer16.Add( self.m_checkBox1, 0, wx.ALL, 5 )
+
+        self.m_staticText27 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Your Goal (kcal/day)"), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText27.Wrap( -1 )
+
+        bSizer16.Add( self.m_staticText27, 0, wx.ALL, 5 )
+
+        self.m_textCtrl13 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        bSizer16.Add( self.m_textCtrl13, 0, wx.ALL, 5 )
+
+
+        bSizer15.Add( bSizer16, 1, wx.EXPAND, 5 )
+
+        bSizer17 = wx.BoxSizer( wx.VERTICAL )
+
+        self.calculate_BMI = wx.Panel(self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        bSizer17.Add(self.calculate_BMI, 0, wx.EXPAND | wx.ALL, 5)
+
+        # Create a sizer for the calculate_BMI panel
+        bmi_sizer = wx.BoxSizer(wx.VERTICAL)
+        self.calculate_BMI.SetSizer(bmi_sizer)
+
+        # Add StaticText for BMI result
+        self.bmi_result_label = wx.StaticText(self.calculate_BMI, wx.ID_ANY, "", wx.DefaultPosition, wx.DefaultSize, 0)
+        bmi_sizer.Add(self.bmi_result_label, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
+
+        self.drawCalorie_Intake = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+        bSizer17.Add( self.drawCalorie_Intake, 1, wx.EXPAND |wx.ALL, 5 )
+
+        self.draw_nutritiousChart = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+        bSizer17.Add( self.draw_nutritiousChart, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+        bSizer15.Add( bSizer17, 1, wx.EXPAND, 5 )
 
 
         self.m_panel3.SetSizer( bSizer15 )
         self.m_panel3.Layout()
         bSizer15.Fit( self.m_panel3 )
-        self.m_notebook1.AddPage( self.m_panel3, _(u"Food Calculator"), False )
+        self.m_notebook1.AddPage( self.m_panel3, _(u"Food Calculator"), True )
 
         bSizer1.Add( self.m_notebook1, 1, wx.EXPAND |wx.ALL, 5 )
 
