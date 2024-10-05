@@ -85,4 +85,13 @@ def prepare_micro_nutrient_data(df, selected_food_data):
         micro_nutri_type.append("Others")
         micro_nutri_value.append(others_value)
 
+    # Sort the macronutrient data in descending order for better visualisation
+    for i in range(len(micro_nutri_value) - 1):
+        for j in range(i + 1, len(micro_nutri_value)):
+            if micro_nutri_value[i] > micro_nutri_value[j]:
+                # Swap values
+                micro_nutri_value[i], micro_nutri_value[j] = micro_nutri_value[j], micro_nutri_value[i]
+                # Swap corresponding types
+                micro_nutri_type[i], micro_nutri_type[j] = micro_nutri_type[j], micro_nutri_type[i]
+
     return micro_nutri_type, micro_nutri_value

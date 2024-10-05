@@ -44,7 +44,7 @@ class CalcFrame(MyFrame1):
         super().__init__(parent)
 
         # Set the size of the frame (width, height)
-        self.SetSize(1000, 800)
+        self.SetSize(1500, 800)
         self.Centre()
 
         # Read the CSV file into a pandas DataFrame
@@ -107,10 +107,10 @@ class CalcFrame(MyFrame1):
         nutri, (ax1, ax2) = plt.subplots(1, 2)
         ax1.barh(macro_nutri_type, macro_nutri_value) # using Horizontal bar plot
         ax1.set_title('Macro Nutrients Level')
-        ax1.set_ylabel("Nutrients")
+        # ax1.set_ylabel("Nutrients")
         ax1.set_xlabel("Value (in gram)")
 
-        explode = (0.1,) * len(micro_nutri_value)
+        explode = (0.25,) + (0,) * (len(micro_nutri_value)-1) # only applied for the first two
         colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue',
                   'tomato', 'mediumseagreen', 'slateblue', 'lightcoral', 'tomato']
         ax2.pie(micro_nutri_value, explode=explode, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%',
