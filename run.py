@@ -96,24 +96,26 @@ class CalcFrame(MyFrame1):
                           wx.OK | wx.ICON_INFORMATION)
 
     def on_select_food(self, event):
+        df = self.table.data
         row = event.GetRow()
         selected_food_data = [self.m_grid1.GetCellValue(row, col) for col in range(self.m_grid1.GetNumberCols())]
         self.m_staticText15.SetLabel(selected_food_data[0])
 
         macro_nutri_type, macro_nutri_value = prepare_macro_nutrient_data(selected_food_data)
-        micro_nutri_type, micro_nutri_value = prepare_micro_nutrient_data(selected_food_data)
+        micro_nutri_type, micro_nutri_value = prepare_micro_nutrient_data(df, selected_food_data)
 
         nutri, (ax1, ax2) = plt.subplots(1, 2)
         ax1.bar(macro_nutri_type, macro_nutri_value)
-        ax1.set_title('Macro Nutrition Level')
-        ax1.set_xlabel("Nutrition")
+        ax1.set_title('Macro Nutrients Level')
+        ax1.set_xlabel("Nutrients")
         ax1.set_ylabel("Value (in gram)")
 
         explode = (0.1,) * len(micro_nutri_value)
-        colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'tomato', 'mediumseagreen', 'slateblue']
+        colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue',
+                  'tomato', 'mediumseagreen', 'slateblue', 'lightcoral', 'tomato']
         ax2.pie(micro_nutri_value, explode=explode, labels=micro_nutri_type, colors=colors, autopct='%1.1f%%',
                 shadow=True)
-        ax2.set_title("Micro Nutrition Percentage")
+        ax2.set_title("Micro Nutrients Percentage")
 
         h, w = self.m_panel4.GetSize()
         nutri.set_size_inches(h / nutri.get_dpi(), w / nutri.get_dpi())

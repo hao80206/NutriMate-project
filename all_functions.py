@@ -25,16 +25,28 @@ def prepare_macro_nutrient_data(selected_food_data):
     return macro_nutri_type, macro_nutri_value
 
 
-def prepare_micro_nutrient_data(selected_food_data):
-    micronutrient_data = {
-        "Cholesterol": float(selected_food_data[10]),
-        "Sodium": float(selected_food_data[11])*100, # convert from g into mg
-        "Vitamin A": float(selected_food_data[13]),
-        "Vitamin C": float(selected_food_data[21]),
-        "Calcium": float(selected_food_data[25]),
-        "Iron": float(selected_food_data[27]),
-        "Zinc": float(selected_food_data[33])
-    }
+def prepare_micro_nutrient_data(df, selected_food_data):
+
+    columns = df.columns
+
+    # Find the indices for the micronutrients, which start from "Cholesterol" to "Zinc"
+    start_index = columns.get_loc("Cholesterol")
+    end_index = columns.get_loc("Zinc")
+
+    micronutrient_data = {}  # Initialize an empty dictionary
+    # Loop over the range from start_index to end_index (inclusive)
+    for i in range(start_index, end_index + 1):
+        key = columns[i]  # Get the column name (key)
+        value = float(selected_food_data[i])  # Get the value and convert it to float
+        micronutrient_data[key] = value  # Add the key-value pair to the dictionary
+
+    # micronutrient_data = {
+    #     columns[i]: float(selected_food_data[i]) for i in range(start_index, end_index + 1)
+    # }
+
+    # Convert Sodium from grams to milligrams
+    if "Sodium" in micronutrient_data:
+        micronutrient_data["Sodium"] *= 1000
 
     """ If value less than 10mg then append to "Others" """
     others_value = 0
