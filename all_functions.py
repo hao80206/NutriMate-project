@@ -36,6 +36,15 @@ def prepare_macro_nutrient_data(df, selected_food_data):
         macro_nutri_type.append(nutrient)
         macro_nutri_value.append(value)
 
+    # Sort the macronutrient data in descending order for better visualisation
+    for i in range(len(macro_nutri_value) - 1):
+        for j in range(i + 1, len(macro_nutri_value)):
+            if macro_nutri_value[i] > macro_nutri_value[j]:
+                # Swap values
+                macro_nutri_value[i], macro_nutri_value[j] = macro_nutri_value[j], macro_nutri_value[i]
+                # Swap corresponding types
+                macro_nutri_type[i], macro_nutri_type[j] = macro_nutri_type[j], macro_nutri_type[i]
+
     return macro_nutri_type, macro_nutri_value
 
 
