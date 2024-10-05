@@ -13,15 +13,29 @@ def search_data(df, keyword):
     return loc
 
 
-def prepare_macro_nutrient_data(selected_food_data):
-    macro_nutri_type = ["Fat", "Protein", "Carbo", "Sugars", "Fiber"]
-    macro_nutri_value = [
-        float(selected_food_data[2]),
-        float(selected_food_data[8]),
-        float(selected_food_data[6]),
-        float(selected_food_data[7]),
-        float(selected_food_data[9])
-    ]
+def prepare_macro_nutrient_data(df, selected_food_data):
+    columns = df.columns
+
+    # Find the indices for the micronutrients, which start from "Cholesterol" to "Zinc"
+    start_index = columns.get_loc("Fat")
+    end_index = columns.get_loc("Water")
+
+    macronutrient_data = {}  # Initialize an empty dictionary
+
+    # Loop over the range from start_index to end_index (inclusive)
+    for i in range(start_index, end_index + 1):
+        if columns[i] not in ["Sodium", "Cholesterol"]:
+            key = columns[i]  # Get the column name (key)
+            value = float(selected_food_data[i])  # Get the value and convert it to float
+            macronutrient_data[key] = value  # Add the key-value pair to the dictionary
+
+    macro_nutri_value = []
+    macro_nutri_type = []
+
+    for nutrient, value in macronutrient_data.items():
+        macro_nutri_type.append(nutrient)
+        macro_nutri_value.append(value)
+
     return macro_nutri_type, macro_nutri_value
 
 
@@ -34,16 +48,13 @@ def prepare_micro_nutrient_data(df, selected_food_data):
     end_index = columns.get_loc("Zinc")
 
     micronutrient_data = {}  # Initialize an empty dictionary
+
     # Loop over the range from start_index to end_index (inclusive)
     for i in range(start_index, end_index + 1):
         if columns[i] not in ["Water", "Cholesterol"]:
             key = columns[i]  # Get the column name (key)
             value = float(selected_food_data[i])  # Get the value and convert it to float
             micronutrient_data[key] = value  # Add the key-value pair to the dictionary
-
-    # micronutrient_data = {
-    #     columns[i]: float(selected_food_data[i]) for i in range(start_index, end_index + 1)
-    # }
 
     # Convert Sodium from grams to milligrams
     if "Sodium" in micronutrient_data:

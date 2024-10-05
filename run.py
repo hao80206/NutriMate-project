@@ -101,11 +101,11 @@ class CalcFrame(MyFrame1):
         selected_food_data = [self.m_grid1.GetCellValue(row, col) for col in range(self.m_grid1.GetNumberCols())]
         self.m_staticText15.SetLabel(selected_food_data[0])
 
-        macro_nutri_type, macro_nutri_value = prepare_macro_nutrient_data(selected_food_data)
+        macro_nutri_type, macro_nutri_value = prepare_macro_nutrient_data(df, selected_food_data)
         micro_nutri_type, micro_nutri_value = prepare_micro_nutrient_data(df, selected_food_data)
 
         nutri, (ax1, ax2) = plt.subplots(1, 2)
-        ax1.bar(macro_nutri_type, macro_nutri_value)
+        ax1.barh(macro_nutri_type, macro_nutri_value) # using Horizontal bar plot
         ax1.set_title('Macro Nutrients Level')
         ax1.set_xlabel("Nutrients")
         ax1.set_ylabel("Value (in gram)")
