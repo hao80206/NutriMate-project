@@ -36,12 +36,7 @@ def prepare_micro_nutrient_data(selected_food_data):
         "Zinc": float(selected_food_data[33])
     }
 
-    # others_value = sum(value for value in micronutrient_data.values() if value <= 10)
-    # micro_nutri_value = [value for value in micronutrient_data.values() if value > 10]
-    # micro_nutri_type = [nutrient for nutrient, value in micronutrient_data.items() if value > 10]
-
-    # Print each micronutrient value to see if it's categorized correctly
-    print("Micronutrient values and their classification:")
+    """ If value less than 10mg then append to "Others" """
     others_value = 0
     micro_nutri_value = []
     micro_nutri_type = []
