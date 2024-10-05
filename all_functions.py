@@ -36,9 +36,10 @@ def prepare_micro_nutrient_data(df, selected_food_data):
     micronutrient_data = {}  # Initialize an empty dictionary
     # Loop over the range from start_index to end_index (inclusive)
     for i in range(start_index, end_index + 1):
-        key = columns[i]  # Get the column name (key)
-        value = float(selected_food_data[i])  # Get the value and convert it to float
-        micronutrient_data[key] = value  # Add the key-value pair to the dictionary
+        if columns[i] not in ["Water", "Cholesterol"]:
+            key = columns[i]  # Get the column name (key)
+            value = float(selected_food_data[i])  # Get the value and convert it to float
+            micronutrient_data[key] = value  # Add the key-value pair to the dictionary
 
     # micronutrient_data = {
     #     columns[i]: float(selected_food_data[i]) for i in range(start_index, end_index + 1)
