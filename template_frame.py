@@ -111,9 +111,9 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer9 = wx.BoxSizer( wx.VERTICAL )
 
-        m_radioBox1Choices = [ _(u"Low"), _(u"Mid"), _(u"High") ]
+        m_radioBox1Choices = [ _(u"None"), _(u"Low"), _(u"Mid"), _(u"High") ]
         self.m_radioBox1 = wx.RadioBox( self.m_panel1, wx.ID_ANY, _(u"Nutrients Range Level"), wx.DefaultPosition, wx.DefaultSize, m_radioBox1Choices, 1, wx.RA_SPECIFY_COLS )
-        self.m_radioBox1.SetSelection( 0 )
+        self.m_radioBox1.SetSelection( 1 )
         bSizer9.Add( self.m_radioBox1, 1, wx.ALL|wx.EXPAND, 5 )
 
 
@@ -181,6 +181,9 @@ class MyFrame1 ( wx.Frame ):
         bSizer10.Add( bSizer11, 0, wx.EXPAND, 5 )
 
         self.m_panel4 = wx.Panel( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+        self.m_panel4.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+        self.m_panel4.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+
         bSizer10.Add( self.m_panel4, 1, wx.ALL|wx.EXPAND, 10 )
 
 
