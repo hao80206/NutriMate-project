@@ -6,7 +6,7 @@ matplotlib.use('WXAgg')  # Use the WXAgg backend for wxPython
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-from all_functions import search_data
+from all_functions import search_data, calculate_bmi, calculate_nutrition
 from template_frame import MyFrame1
 
 
@@ -88,9 +88,9 @@ class CalcFrame(MyFrame1):
 
     def Calculate(self, event):
         # BMI calculator
-        calorie_intake = 0
         try:
-            height = float(self.m_textCtrl111.GetValue()) / 100.0  # convert cm to meters
+            # Get height, weight, and age from text controls
+            height = float(self.m_textCtrl111.GetValue()) / 100.0  # Convert cm to meters
             weight = float(self.m_textCtrl121.GetValue())
             age = int(self.m_textCtrl14.GetValue())
 
@@ -100,137 +100,130 @@ class CalcFrame(MyFrame1):
             else:
                 gender = 'M'  # Male
 
-            # Calculate BMI
-            bmi = weight / (height * height)
+            # Call the calculate_bmi function to compute BMI and calorie intake
+            bmi, calorie_intake = calculate_bmi(height, weight, age, gender)
 
-            # Estimate daily calorie intake (simple calculation)
-            if gender == 'M':
-                calorie_intake = 10 * weight + 6.25 * (height * 100) - 5 * age + 5
-            elif gender == 'F':
-                calorie_intake = 10 * weight + 6.25 * (height * 100) - 5 * age - 161
-            else:
-                self.bmi_result_label.SetLabel("Invalid gender input!")
-                self.calculate_BMI.Layout()
-                return calorie_intake
-
-                # Show results
+            # Show results
             self.bmi_result_label.SetLabel(
-                f"Your BMI = {bmi:.2f}\n Based on your height and weight, your recommended daily calorie intake is {calorie_intake:.2f} kcal.")
+                f"Your BMI = {bmi:.2f}\nBased on your height and weight, your recommended daily calorie intake is {calorie_intake:.2f} kcal."
+            )
             self.calculate_BMI.Layout()
 
         except ValueError:
             self.bmi_result_label.SetLabel("Please enter valid numeric values in the body information form.")
             self.calculate_BMI.Layout()
             return
-
 #------------------ For nutrition calculations and barchart
-
-        # For nutrition calculations and bar chart
-        total_carbs = total_sugers = total_protein = total_fat = total_fiber = total_cal = 0
-
-        # Function to get nutrient data
-        def get_nutrient_data(food, amount):
-            max_amount = 500
-            if amount > max_amount:
-                amount = max_amount
-                wx.MessageBox(f"Amount is too large, clamping to {max_amount}g.", "Warning", wx.OK | wx.ICON_WARNING)
-
-            if not food or amount <= 0:
-                return 0, 0, 0, 0, 0, 0
-
-            food_data = self.df[self.df['food'].str.lower() == food.lower()]
-            if food_data.empty:
-                wx.MessageBox(f"Food '{food}' not found in the dataset.", "Error", wx.OK | wx.ICON_ERROR)
-                return 0, 0, 0, 0, 0, 0
-
-            carbs_per_100g = food_data['Carbohydrates'].values[0]
-            sugers_per_100g = food_data['Sugars'].values[0]
-            protein_per_100g = food_data['Protein'].values[0]
-            fat_per_100g = (
-                    food_data['Fat'].values[0] +
-                    food_data['Saturated Fats'].values[0] +
-                    food_data['Monounsaturated Fats'].values[0] +
-                    food_data['Polyunsaturated Fats'].values[0]
-            )
-            fiber_per_100g = food_data['Dietary Fiber'].values[0]
-            cal_per_100g = food_data['Caloric Value'].values[0]
-
-            return (
-                (carbs_per_100g / 100) * amount,
-                (sugers_per_100g / 100) * amount,
-                (protein_per_100g / 100) * amount,
-                (fat_per_100g / 100) * amount,
-                (fiber_per_100g / 100) * amount,
-                (cal_per_100g / 100) * amount
-            )
-
-        # Breakfast
+        # Nutrition calculations
         try:
             breakfast_amount = float(self.m_textCtrl8.GetValue()) if self.m_textCtrl8.GetValue() else 0
-            total_carbs_b, total_sugers_b, total_protein_b, total_fat_b, total_fiber_b, total_cal_b = get_nutrient_data(
-                self.m_textCtrl7.GetValue(), breakfast_amount)
-            total_carbs += total_carbs_b
-            total_sugers += total_sugers_b
-            total_protein += total_protein_b
-            total_fat += total_fat_b
-            total_fiber += total_fiber_b
-            total_cal += total_cal_b
-        except ValueError:
-            wx.MessageBox("Please enter a valid numeric value for breakfast amount.", "Error", wx.OK | wx.ICON_ERROR)
-            return
-
-        # Lunch
-        try:
             lunch_amount = float(self.m_textCtrl12.GetValue()) if self.m_textCtrl12.GetValue() else 0
-            total_carbs_l, total_sugers_l, total_protein_l, total_fat_l, total_fiber_l, total_cal_l = get_nutrient_data(
-                self.m_textCtrl9.GetValue(), lunch_amount)
-            total_carbs += total_carbs_l
-            total_sugers += total_sugers_l
-            total_protein += total_protein_l
-            total_fat += total_fat_l
-            total_fiber += total_fiber_l
-            total_cal += total_cal_l
-        except ValueError:
-            wx.MessageBox("Please enter a valid numeric value for lunch amount.", "Error", wx.OK | wx.ICON_ERROR)
-            return
-
-        # Dinner
-        try:
             dinner_amount = float(self.m_textCtrl11.GetValue()) if self.m_textCtrl11.GetValue() else 0
-            total_carbs_d, total_sugers_d, total_protein_d, total_fat_d, total_fiber_d, total_cal_d = get_nutrient_data(
-                self.m_textCtrl10.GetValue(), dinner_amount)
-            total_carbs += total_carbs_d
-            total_sugers += total_sugers_d
-            total_protein += total_protein_d
-            total_fat += total_fat_d
-            total_fiber += total_fiber_d
-            total_cal += total_cal_d
+
+            breakfast_food = self.m_textCtrl7.GetValue()
+            lunch_food = self.m_textCtrl9.GetValue()
+            dinner_food = self.m_textCtrl10.GetValue()
+
+            # Validate inputs for amounts and foods
+            max_amount = 500
+            if breakfast_amount > max_amount:
+                breakfast_amount = max_amount
+                wx.MessageBox(f"Breakfast amount is too large, clamping to {max_amount}g.", "Warning",
+                            wx.OK | wx.ICON_WARNING)
+
+            if lunch_amount > max_amount:
+                lunch_amount = max_amount
+                wx.MessageBox(f"Lunch amount is too large, clamping to {max_amount}g.", "Warning",
+                                wx.OK | wx.ICON_WARNING)
+
+            if dinner_amount > max_amount:
+                dinner_amount = max_amount
+                wx.MessageBox(f"Dinner amount is too large, clamping to {max_amount}g.", "Warning",
+                                wx.OK | wx.ICON_WARNING)
+
+            if not breakfast_food and not lunch_food and not dinner_food:
+                wx.MessageBox("Please enter at least one valid meal with food and amount.", "Error",
+                              wx.OK | wx.ICON_ERROR)
+                return
+
+            # Additional individual checks for the meals that were entered
+            if breakfast_food and breakfast_amount <= 0:
+                wx.MessageBox("Please enter a valid breakfast food and amount.", "Error", wx.OK | wx.ICON_ERROR)
+                return
+
+            if lunch_food and  lunch_amount <= 0:
+                wx.MessageBox("Please enter a valid lunch food and amount.", "Error", wx.OK | wx.ICON_ERROR)
+                return
+
+            if dinner_food and dinner_amount <= 0:
+                wx.MessageBox("Please enter a valid dinner food and amount.", "Error", wx.OK | wx.ICON_ERROR)
+                return
+
+            # Get nutrition data
+            total_carbs, total_sugars, total_protein, total_fat, total_fiber, total_cal = 0, 0, 0, 0, 0, 0
+
+            meals = [
+                (breakfast_food, breakfast_amount),
+                (lunch_food, lunch_amount),
+                (dinner_food, dinner_amount)
+            ]
+            # Flag to check if at least one meal is provided
+            meal_provided = False
+            for meal_food, meal_amount in meals:
+                if meal_food and meal_amount > 0:  # Only process if meal_food is provided and meal_amount is positive
+                    meal_provided = True
+                    food_data = self.df[self.df['food'].str.lower() == meal_food.lower()]
+
+                    if food_data.empty:
+                        wx.MessageBox(f"Food '{meal_food}' not found in the dataset.", "Error", wx.OK | wx.ICON_ERROR)
+                        return
+
+                    # Calculate nutritional values per 100g
+                    carbs_per_100g = food_data['Carbohydrates'].values[0]
+                    sugars_per_100g = food_data['Sugars'].values[0]
+                    protein_per_100g = food_data['Protein'].values[0]
+                    fat_per_100g = food_data['Fat'].values[0]
+                    fiber_per_100g = food_data['Dietary Fiber'].values[0]
+                    cal_per_100g = food_data['Caloric Value'].values[0]
+
+                    # Calculate nutrients for the meal
+                    carbs, sugars, fat, protein, fiber, cal = calculate_nutrition(carbs_per_100g, sugars_per_100g, fat_per_100g, protein_per_100g, fiber_per_100g,cal_per_100g, meal_amount)
+                    # Accumulate totals
+                    total_carbs += carbs
+                    total_sugars += sugars
+                    total_protein += protein
+                    total_fat += fat
+                    total_fiber += fiber
+                    total_cal += cal
+
+            # Check if at least one meal was provided
+            if not meal_provided:
+                wx.MessageBox("Please enter at least one valid meal with food and amount.", "Error",
+                              wx.OK | wx.ICON_ERROR)
+                return
+
+            # Display total nutrition for the day
+            wx.MessageBox(
+                f"Total for the day:\nCarbohydrates: {total_carbs:.2f}g\nSugars: {total_sugars:.2f}g\nProtein: {total_protein:.2f}g\nFat: {total_fat:.2f}g\nFiber: {total_fiber:.2f}g",
+                "Nutrition Summary", wx.OK | wx.ICON_INFORMATION
+            )
+
+            # Now draw the nutrition bar chart
+            self.draw_nutrition_chart(total_carbs, total_sugars, total_protein, total_fat, total_fiber)
+            self.draw_calorie_intake_chart(calorie_intake, total_cal)
+
         except ValueError:
-            wx.MessageBox("Please enter a valid numeric value for dinner amount.", "Error", wx.OK | wx.ICON_ERROR)
+            wx.MessageBox("Please enter a valid numeric value for amount.", "Error", wx.OK | wx.ICON_ERROR)
             return
 
-        # Check if any nutrient data was entered
-        if total_carbs == 0 and total_sugers == 0 and total_protein == 0 and total_fat == 0 and total_fiber == 0 and total_cal == 0:
-            wx.MessageBox("Please enter valid food amounts.", "Error", wx.OK | wx.ICON_ERROR)
-            return
-
-        # Display total nutrition for the day
-        wx.MessageBox(
-            f"Total for the day:\nCarbohydrates: {total_carbs}g\nSugars: {total_sugers}g\nProtein: {total_protein}g\nFat: {total_fat}g\nFiber: {total_fiber}g",
-            "Nutrition Summary", wx.OK | wx.ICON_INFORMATION)
-
-        # Now drawing the nutrition bar chart inside the panel using matplotlib
-        self.draw_nutrition_chart(total_carbs, total_sugers, total_protein, total_fat, total_fiber)
-        self.draw_calorie_intake_chart(calorie_intake, total_cal)
-
-    def draw_nutrition_chart(self, total_carbs, total_sugers, total_protein, total_fat, total_fiber):
+    def draw_nutrition_chart(self, total_carbs, total_sugars, total_protein, total_fat, total_fiber):
         # Create a figure
         figure = Figure(figsize=(12, 10), dpi=100)
         axes = figure.add_subplot(111)
 
         # Nutrient data
         nutrients = ['Carbohydrates', 'Sugars', 'Protein', 'Fat', 'Fiber']
-        values = [total_carbs, total_sugers, total_protein, total_fat, total_fiber]
+        values = [total_carbs, total_sugars, total_protein, total_fat, total_fiber]
 
         # Create bar chart
         axes.bar(nutrients, values, color=['lightcoral', 'lightblue', 'lightgreen', 'purple', 'grey'])
@@ -250,19 +243,19 @@ class CalcFrame(MyFrame1):
         self.draw_nutritiousChart.Layout()
 
     def draw_calorie_intake_chart(self, calorie_intake, total_cal):
-
         if calorie_intake <= 0 or total_cal <= 0:
             wx.MessageBox("Calorie intake or total calories must be greater than 0 to display the chart.", "Error",
-                          wx.OK | wx.ICON_ERROR)
+                            wx.OK | wx.ICON_ERROR)
             return
+
         # Calculate the percentages
         consumed_percentage = (total_cal / calorie_intake) * 100
         remaining_percentage = 100 - consumed_percentage
 
         # Labels and values for the pie chart
-        consumed_label = f'Consumed ({total_cal} kcal)'
+        consumed_label = f'Consumed ({total_cal:.2f} kcal)'
         remaining_calories = calorie_intake - total_cal
-        remaining_label = f'Remaining ({remaining_calories} kcal)'
+        remaining_label = f'Remaining ({remaining_calories:.2f} kcal)'
 
         labels = [consumed_label, remaining_label]
         values = [consumed_percentage, remaining_percentage]
@@ -283,6 +276,7 @@ class CalcFrame(MyFrame1):
         canvas = FigureCanvas(self.drawCalorie_Intake, -1, figure)
         canvas.SetMinSize(self.drawCalorie_Intake.GetSize())
         self.drawCalorie_Intake.Layout()
+
 
 if __name__ == "__main__":
     app = wx.App()
