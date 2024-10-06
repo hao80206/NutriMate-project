@@ -94,15 +94,35 @@ class CalcFrame(MyFrame1):
             weight = float(self.m_textCtrl121.GetValue())
             age = int(self.m_textCtrl14.GetValue())
 
-            # Determine gender from checkbox
-            if self.m_checkBox1.GetValue():
-                gender = 'F'  # Female
-            else:
-                gender = 'M'  # Male
+        except ValueError:
+            self.bmi_result_label.SetLabel("Please enter valid numeric values for height, weight, and age.")
+            self.calculate_BMI.Layout()
+            return
 
+        if height <= 0:
+            self.bmi_result_label.SetLabel("Height must be greater than 0.")
+            self.calculate_BMI.Layout()
+            return
+
+        if weight <= 0:
+            self.bmi_result_label.SetLabel("Weight must be greater than 0.")
+            self.calculate_BMI.Layout()
+            return
+
+        if age <= 0:
+            self.bmi_result_label.SetLabel("Age must be a positive number.")
+            self.calculate_BMI.Layout()
+            return
+
+        # Determine gender from checkbox
+        if self.m_checkBox1.GetValue():
+            gender = 'F'  # Female
+        else:
+            gender = 'M'  # Male
+
+        try:
             # Call the calculate_bmi function to compute BMI and calorie intake
             bmi, calorie_intake = calculate_bmi(height, weight, age, gender)
-
             # Show results
             self.bmi_result_label.SetLabel(
                 f"Your BMI = {bmi:.2f}\nBased on your height and weight, your recommended daily calorie intake is {calorie_intake:.2f} kcal."

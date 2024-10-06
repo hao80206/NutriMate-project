@@ -23,7 +23,7 @@ def calculate_bmi(height,weight,age,gender):
     else:
         raise ValueError("Invalid gender input!")
 
-    return bmi, calorie_intake
+    return round(bmi, 2), round(calorie_intake, 2)
 
 def calculate_nutrition(carbs_per_100g,sugars_per_100g,fat_per_100g, protein_per_100g,fiber_per_100g,cal_per_100g, amount):
     carbs = (carbs_per_100g / 100) * amount
