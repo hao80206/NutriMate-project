@@ -191,9 +191,8 @@ class MyFrame1 ( wx.Frame ):
         self.m_panel2.Layout()
         bSizer10.Fit( self.m_panel2 )
         self.m_notebook1.AddPage( self.m_panel2, _(u"Nutrition Info Display"), True )
-
-        self.m_panel3 = wx.Panel(self.m_notebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
-        bSizer15 = wx.BoxSizer(wx.VERTICAL)
+        self.m_panel3 = wx.Panel( self.m_notebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+        bSizer15 = wx.BoxSizer( wx.VERTICAL )
 
         self.m_staticText21 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"Tell me what you had today!!"),
                                             wx.DefaultPosition, wx.DefaultSize, 0)
@@ -218,7 +217,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_textCtrl7 = wx.TextCtrl(self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
         bSizer13.Add(self.m_textCtrl7, 0, wx.ALL, 5)
 
-        self.m_staticText211 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition,
+        self.m_staticText211 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"How much (max 500g) : "), wx.DefaultPosition,
                                              wx.DefaultSize, 0)
         self.m_staticText211.Wrap(-1)
 
@@ -240,7 +239,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_textCtrl9 = wx.TextCtrl(self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
         bSizer14.Add(self.m_textCtrl9, 0, wx.ALL, 5)
 
-        self.m_staticText23 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition,
+        self.m_staticText23 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"How much (max 500g) : "), wx.DefaultPosition,
                                             wx.DefaultSize, 0)
         self.m_staticText23.Wrap(-1)
 
@@ -268,7 +267,7 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer151.Add(self.m_staticText25, 0, wx.ALL, 5)
 
-        self.m_staticText231 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition,
+        self.m_staticText231 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"How much (max 500g) : "), wx.DefaultPosition,
                                              wx.DefaultSize, 0)
         self.m_staticText231.Wrap(-1)
 
@@ -281,7 +280,7 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer16 = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.m_staticText251 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"Height :  "), wx.DefaultPosition,
+        self.m_staticText251 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"Height(cm) :  "), wx.DefaultPosition,
                                              wx.DefaultSize, 0)
         self.m_staticText251.Wrap(-1)
 
@@ -291,7 +290,7 @@ class MyFrame1 ( wx.Frame ):
                                          0)
         bSizer16.Add(self.m_textCtrl111, 0, wx.ALL, 5)
 
-        self.m_staticText26 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"Weight :  "), wx.DefaultPosition,
+        self.m_staticText26 = wx.StaticText(self.m_panel3, wx.ID_ANY, _(u"Weight(kg):  "), wx.DefaultPosition,
                                             wx.DefaultSize, 0)
         self.m_staticText26.Wrap(-1)
 
@@ -326,6 +325,14 @@ class MyFrame1 ( wx.Frame ):
         self.calculate_BMI = wx.Panel(self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
         bSizer17.Add(self.calculate_BMI, 1, wx.EXPAND | wx.ALL, 5)
 
+        # Create a sizer for the calculate_BMI panel
+        bmi_sizer = wx.BoxSizer(wx.VERTICAL)
+        self.calculate_BMI.SetSizer(bmi_sizer)
+
+        # Add StaticText for BMI result
+        self.bmi_result_label = wx.StaticText(self.calculate_BMI, wx.ID_ANY, "", wx.DefaultPosition, wx.DefaultSize, 0)
+        bmi_sizer.Add(self.bmi_result_label, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
+
         bSizer18 = wx.BoxSizer(wx.HORIZONTAL)
 
         self.draw_nutritiousChart = wx.Panel(self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize,
@@ -357,6 +364,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_button1.Bind( wx.EVT_BUTTON, self.OnSearch )
         self.m_radioBox1.Bind( wx.EVT_RADIOBOX, self.RangeLevel )
         self.m_grid1.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.on_select_food )
+        self.m_button2.Bind( wx.EVT_BUTTON, self.Calculate )
 
     def __del__( self ):
         pass
@@ -370,6 +378,9 @@ class MyFrame1 ( wx.Frame ):
         event.Skip()
 
     def on_select_food( self, event ):
+        event.Skip()
+
+    def Calculate( self, event ):
         event.Skip()
 
 
