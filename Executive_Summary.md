@@ -1,7 +1,7 @@
 # Executive Summary
 
 Please provide your GitHub repository link.
-### GitHub Repository URL: https://github.com/XXXX/XXXXX.git
+### GitHub Repository URL: https://github.com/hartonoosu/Milestone1_Group44.git
 
 ---
 
@@ -23,13 +23,14 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ---
 
-## 2. [Feature 2 Name]
-### Description  
-Briefly describe what this feature does.
+## 2. Feature 2: Nutrition Breakdown
+
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. First, user search for a food product on the **Food Search** tab.
+2. Next, user click on one of the preferred food product on the table.
+3. Once selected, user navigate to **Nutrition Info Display** tab.
+4. Nutritional info of the selected food, including the Bar Graph and Pie Chart will be displayed under this tab.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
