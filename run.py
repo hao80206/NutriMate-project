@@ -106,8 +106,9 @@ class CalcFrame(MyFrame1):
 
         nutri, (ax1, ax2) = plt.subplots(1, 2)
         ax1.barh(macro_nutri_type, macro_nutri_value) # using Horizontal bar plot
-        ax1.set_title('Macro Nutrients Level')
-        # ax1.set_ylabel("Nutrients")
+        ax1.set_title('Macro Nutrients Level', pad=20)
+        ax1.text(0.5, 1.01, '*Fat includes Saturated Fat, Monounsaturated Fat, and Polyunsaturated Fat\n*Carbohydrate '
+                            'includes Sugar', fontsize=5, ha='center', transform=ax1.transAxes)
         ax1.set_xlabel("Value (in gram)")
 
         colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue',
