@@ -39,14 +39,12 @@ class CalcFrame(MyFrame1):
         # Read the CSV file into a pandas DataFrame
         self.df = pd.read_csv(r".\Food_Nutrition_Dataset.csv")
 
-
         # Set the table data in the wxGrid
         self.table = DataTable(self.df)
         self.m_grid1.SetTable(self.table, takeOwnership=True)
 
         # Resize grid columns to fit content
         self.m_grid1.AutoSize()
-
 
         self.Show(True)
         self.Layout()
@@ -64,42 +62,24 @@ class CalcFrame(MyFrame1):
             df = df[loc]
 
         # Check if nutrient name is provided
-        if nutrient_name in df.columns:  # Ensure nutrient name is valid
+        # Check if both min and max values are provided
             min_value_str = self.m_textCtrl3.GetValue().strip()  # Get min value as string
             max_value_str = self.m_textCtrl4.GetValue().strip()  # Get max value as string
-
-            # Check if both min and max values are provided
-            if min_value_str and max_value_str:  # Both values are provided
-                min_value = float(min_value_str)  # Convert to float
-                max_value = float(max_value_str)  # Convert to float
-
-                # Filter based on nutrient range
-                nutrient = df[nutrient_name]
-                range_filter = (nutrient >= min_value) & (nutrient <= max_value)
-                df = df.loc[range_filter]
 
             # If min or max are not provided, filter by level
             else:
                 level_filter = None
                 if nutrient_level:  # Check if nutrient level is selected
-                    nutrient_max = df[nutrient_name].max()
 
-                    low_threshold = nutrient_max * 0.33
-                    mid_threshold = nutrient_max * 0.66
 
-                    print(
-                        f"nutrient_max: {nutrient_max}, low_threshold: {low_threshold}, mid_threshold: {mid_threshold}")
 
-                    if nutrient_level == 'Low':
-                        level_filter = df[nutrient_name] < low_threshold
-                    elif nutrient_level == 'Mid':
-                        level_filter = (df[nutrient_name] >= low_threshold) & (df[nutrient_name] <= mid_threshold)
-                    elif nutrient_level == 'High':
-                        level_filter = df[nutrient_name] > mid_threshold
+
+                    # print(f"nutrient_max: {nutrient_max}, low_threshold: {low_threshold}, mid_threshold: {mid_threshold}")
+
+
 
                     df = df.loc[level_filter]
-                    print(f"level_filter ({nutrient_level}): {level_filter.sum()} items found")
-
+                    # print(f"level_filter ({nutrient_level}): {level_filter.sum()} items found")
 
         if df.empty:  # If df is empty after filtering
             self.m_grid1.ClearGrid()  # Clear the grid again to ensure it's empty
@@ -107,12 +87,8 @@ class CalcFrame(MyFrame1):
         else:
             tabl = DataTable(df)
             self.m_grid1.ClearGrid()
-            self.m_grid1.SetTable(tabl, takeOwnership=True)
+            self.m_grid1.SetT able(tabl, takeOwnership=True)
             self.m_grid1.AutoSize()
-
-
-
-
 
 
 if __name__ == "__main__":
