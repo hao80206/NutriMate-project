@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 
 from all_functions import search_data, prepare_macro_nutrient_data, prepare_micro_nutrient_data
 from all_functions import search_data, calculate_bmi, calculate_nutrition
+from all_functions import search_data, filter_nutrients, prepare_macro_nutrient_data, prepare_micro_nutrient_data
 from template_frame import MyFrame1
 
 
@@ -55,7 +56,6 @@ class CalcFrame(MyFrame1):
         # Read the CSV file into a pandas DataFrame
         self.df = pd.read_csv(r"./Food_Nutrition_Dataset.csv")
 
-
         # Set the table data in the wxGrid
         self.table = DataTable(self.df)
         self.m_grid1.SetTable(self.table, takeOwnership=True)
@@ -72,60 +72,33 @@ class CalcFrame(MyFrame1):
     def OnSearch(self, event):
         keyword = self.m_textCtrl1.GetValue()
         nutrient_name = self.m_textCtrl2.GetValue().strip()
-        nutrient_level = self.m_radioBox1.GetStringSelection().strip()
-
-        df = self.table.data
+        nutrient_level = self.m_radioBox1.GetStringSelection().strip()  # Get selection level
+        min_value_str = self.m_textCtrl3.GetValue().strip()  # Get min value as string
+        max_value_str = self.m_textCtrl4.GetValue().strip()  # Get max value as string
+        df = self.df
 
         # Search food
         if keyword:
             loc = search_data(df, keyword)
             df = df[loc]
+            self.update_grid(df)
 
-        # Check if nutrient name is provided
-        if nutrient_name in df.columns:  # Ensure nutrient name is valid
-            min_value_str = self.m_textCtrl3.GetValue().strip()  # Get min value as string
-            max_value_str = self.m_textCtrl4.GetValue().strip()  # Get max value as string
+        # Filter nutrients using update
+        if nutrient_name in df.columns:
+            filter_df = filter_nutrients(df, nutrient_name,nutrient_level, min_value_str, max_value_str)
+            self.update_grid(filter_df)
 
-            # Check if both min and max values are provided
-            if min_value_str and max_value_str:  # Both values are provided
-                min_value = float(min_value_str)  # Convert to float
-                max_value = float(max_value_str)  # Convert to float
-
-                # Filter based on nutrient range
-                nutrient = df[nutrient_name]
-                range_filter = (nutrient >= min_value) & (nutrient <= max_value)
-                df = df.loc[range_filter]
-
-            # If min or max are not provided, filter by level
-            else:
-                level_filter = None
-                if nutrient_level:  # Check if nutrient level is selected
-                    nutrient_max = df[nutrient_name].max()
-
-                    low_threshold = nutrient_max * 0.33
-                    mid_threshold = nutrient_max * 0.66
-
-                    print(
-                        f"nutrient_max: {nutrient_max}, low_threshold: {low_threshold}, mid_threshold: {mid_threshold}")
-
-                    if nutrient_level == 'Low':
-                        level_filter = df[nutrient_name] < low_threshold
-                    elif nutrient_level == 'Mid':
-                        level_filter = (df[nutrient_name] >= low_threshold) & (df[nutrient_name] <= mid_threshold)
-                    elif nutrient_level == 'High':
-                        level_filter = df[nutrient_name] > mid_threshold
-
-                    df = df.loc[level_filter]
-                    print(f"level_filter ({nutrient_level}): {level_filter.sum()} items found")
-
-
+    def update_grid(self, df):
+        if not isinstance(df, pd.DataFrame):
+            wx.MessageBox("Data is not in the correct format.", "Error", wx.OK | wx.ICON_ERROR)
+            return  # Exit the method if df is not a DataFrame
         if df.empty:  # If df is empty after filtering
-            self.m_grid1.ClearGrid()  # Clear the grid again to ensure it's empty
-            print("No items found. The grid has been cleared.")
+            wx.MessageBox("No items found. Please try again.", "Information", wx.OK | wx.ICON_INFORMATION)
+            self.m_grid1.ClearGrid()  # Clear the grid
         else:
-            tabl = DataTable(df)
+            new_table = DataTable(df)
             self.m_grid1.ClearGrid()
-            self.m_grid1.SetTable(tabl, takeOwnership=True)
+            self.m_grid1.SetTable(new_table, takeOwnership=True)
             self.m_grid1.AutoSize()
 
 
