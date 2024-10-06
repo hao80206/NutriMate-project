@@ -1,19 +1,37 @@
 # Executive Summary
 
 Please provide your GitHub repository link.
-### GitHub Repository URL: https://github.com/hartonoosu/Milestone1_Group44.git
+### GitHub Repository URL: https://github.com/XXXX/XXXXX.git
 
 ---
 
 You should use your software to prepare an executive summary as outlined below for the five required features.
 
-## 1. [Feature 1 Name]
+## 1. Food Search 
 ### Description  
-Briefly describe what this feature does.
+This feature filters the database looking for a  keyword. As an example if I look for("tortilla"). It searches the food column for the tortilla and retrieves all the food which has tortilla on it.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Enter the food that are you looking for in the box next to the keyword.
+2. Press Search button.
+
+### Screenshots
+Include screenshots for each step demonstrating the use of this feature.  
+![1](./FoodSearch1.png)
+
+![2](./FoodSearchResults.png)
+
+---
+
+## 2. Food filter by range
+### Description  
+This feature filters the database looking for food in a nutrient range enter by the consumer. As an example if I look for("tortilla") and nutrient Fat range it between 1 and 3 . It searches the food column for the tortilla and retrieves all the food which meet the criteria.
+
+### Steps
+1. Enter the food that are you like for in the box next to the keyword.
+2. Enter a nutrient in the box below nutrients.
+3. Enter the max and min their respective boxes.
+4. Press button Search.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
@@ -23,26 +41,9 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ---
 
-## 2. Feature 2: Nutrition Breakdown
-
-
-### Steps
-1. First, user search for a food product on the **Food Search** tab.
-2. Next, user click on one of the preferred food product on the table.
-3. Once selected, user navigate to **Nutrition Info Display** tab.
-4. Nutritional info of the selected food, including the Bar Graph and Pie Chart will be displayed under this tab.
-
-### Screenshots
-Include screenshots for each step demonstrating the use of this feature.  
-![1](./visual_design.png)
-
-![2](./visual_design.png)
-
----
-
-## 3. [Feature 3 Name]
+## 3. Food filter by level
 ### Description  
-Briefly describe what this feature does.
+This feature filters the database looking for food in a nutrient level enter by the consumer. As an example if I look for("tortilla") and for nutrient enter Fat High. It searches the food column for th e tortilla and retrieves all the food which meets criteria.
 
 ### Steps
 1. Step-by-step instructions for using this feature.
