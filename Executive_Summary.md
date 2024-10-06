@@ -12,14 +12,14 @@ You should use your software to prepare an executive summary as outlined below f
 This feature filters the database looking for a  keyword. As an example if I look for("tortilla"). It searches the food column for the tortilla and retrieves all the food which has tortilla on it.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Enter the food that are you looking for in the box next to the keyword.
+2. Press Search button.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
 ![1](./FoodSearch1.png)
 
-![2](./visual_design.png)
+![2](./FoodSearchResults.png)
 
 ---
 
@@ -28,8 +28,10 @@ Include screenshots for each step demonstrating the use of this feature.
 This feature filters the database looking for food in a nutrient range enter by the consumer. As an example if I look for("tortilla") and nutrient Fat range it between 1 and 3 . It searches the food column for the tortilla and retrieves all the food which meet the criteria.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Enter the food that are you like for in the box next to the keyword.
+2. Enter a nutrient in the box below nutrients.
+3. Enter the max and min their respective boxes.
+4. Press button Search.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
