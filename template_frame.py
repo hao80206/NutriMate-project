@@ -245,7 +245,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_textCtrl7 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer13.Add( self.m_textCtrl7, 0, wx.ALL, 5 )
 
-        self.m_staticText211 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText211 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (max 500g) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText211.Wrap( -1 )
 
         bSizer13.Add( self.m_staticText211, 0, wx.ALL, 5 )
@@ -266,7 +266,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_textCtrl9 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer14.Add( self.m_textCtrl9, 0, wx.ALL, 5 )
 
-        self.m_staticText23 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText23 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (max 500g) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText23.Wrap( -1 )
 
         bSizer14.Add( self.m_staticText23, 0, wx.ALL, 5 )
@@ -292,7 +292,7 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer151.Add( self.m_staticText25, 0, wx.ALL, 5 )
 
-        self.m_staticText231 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (gram) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText231 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"How much (max 500g) : "), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText231.Wrap( -1 )
 
         bSizer151.Add( self.m_staticText231, 0, wx.ALL, 5 )
@@ -305,7 +305,7 @@ class MyFrame1 ( wx.Frame ):
 
         bSizer16 = wx.BoxSizer( wx.HORIZONTAL )
 
-        self.m_staticText251 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Height :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText251 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Height (cm) :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText251.Wrap( -1 )
 
         bSizer16.Add( self.m_staticText251, 0, wx.ALL, 5 )
@@ -313,7 +313,7 @@ class MyFrame1 ( wx.Frame ):
         self.m_textCtrl111 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer16.Add( self.m_textCtrl111, 0, wx.ALL, 5 )
 
-        self.m_staticText26 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Weight :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText26 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Weight (kg) :  "), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText26.Wrap( -1 )
 
         bSizer16.Add( self.m_staticText26, 0, wx.ALL, 5 )
@@ -337,21 +337,12 @@ class MyFrame1 ( wx.Frame ):
         self.m_checkBox1 = wx.CheckBox( self.m_panel3, wx.ID_ANY, _(u"Female"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer16.Add( self.m_checkBox1, 0, wx.ALL, 5 )
 
-        self.m_staticText27 = wx.StaticText( self.m_panel3, wx.ID_ANY, _(u"Your Goal (kcal/day)"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.m_staticText27.Wrap( -1 )
+        bSizer15.Add(bSizer16, 1, wx.EXPAND, 5)
 
-        bSizer16.Add( self.m_staticText27, 0, wx.ALL, 5 )
-
-        self.m_textCtrl13 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        bSizer16.Add( self.m_textCtrl13, 0, wx.ALL, 5 )
-
-
-        bSizer15.Add( bSizer16, 1, wx.EXPAND, 5 )
-
-        bSizer17 = wx.BoxSizer( wx.VERTICAL )
+        bSizer17 = wx.BoxSizer(wx.VERTICAL)
 
         self.calculate_BMI = wx.Panel(self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
-        bSizer17.Add(self.calculate_BMI, 0, wx.EXPAND | wx.ALL, 5)
+        bSizer17.Add(self.calculate_BMI, 1, wx.EXPAND | wx.ALL, 5)
 
         # Create a sizer for the calculate_BMI panel
         bmi_sizer = wx.BoxSizer(wx.VERTICAL)
@@ -361,11 +352,17 @@ class MyFrame1 ( wx.Frame ):
         self.bmi_result_label = wx.StaticText(self.calculate_BMI, wx.ID_ANY, "", wx.DefaultPosition, wx.DefaultSize, 0)
         bmi_sizer.Add(self.bmi_result_label, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
 
-        self.drawCalorie_Intake = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        bSizer17.Add( self.drawCalorie_Intake, 1, wx.EXPAND |wx.ALL, 5 )
+        bSizer18 = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.draw_nutritiousChart = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        bSizer17.Add( self.draw_nutritiousChart, 1, wx.EXPAND |wx.ALL, 5 )
+        self.draw_nutritiousChart = wx.Panel(self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize,
+                                             wx.TAB_TRAVERSAL)
+        bSizer18.Add(self.draw_nutritiousChart, 1, wx.EXPAND | wx.ALL, 5)
+
+        self.drawCalorie_Intake = wx.Panel(self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize,
+                                           wx.TAB_TRAVERSAL)
+        bSizer18.Add(self.drawCalorie_Intake, 1, wx.EXPAND | wx.ALL, 5)
+
+        bSizer17.Add(bSizer18, 1, wx.EXPAND, 5)
 
 
         bSizer15.Add( bSizer17, 1, wx.EXPAND, 5 )
