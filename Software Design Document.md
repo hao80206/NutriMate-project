@@ -633,14 +633,18 @@ The middle section, titled "Find Food that Suits You," allows users to filter fo
 
 The bottom section, labeled "Summary," provides a recap of the user's health and dietary activity. This section shows the user's daily calorie intake using a progress circle (e.g., 1500 calories consumed). Additionally, it offers a nutritional breakdown of the user's food intake, showing consumed nutrients like carbohydrates, proteins, and fats, alongside suggested daily intake values for these nutrients.
 
+<span style="color: red;">The final section, labeled "Food Calculator," gives a detailed summary of the user's daily health and calorie intake. Based on the input provided, which includes what the user ate for breakfast, lunch, and dinner, along with quantities, height, weight, age, and gender, the calculator estimates the amounts of the five major macronutrients: carbohydrates, proteins, fats, fiber, and sugars. Additionally, using the user's BMI and calorie intake, it evaluates how balanced the user's diet is and provides insights into how well their calorie consumption aligns with their nutritional needs.</span>
+
 Example:  
-![Visual Design](./Screen1.png)
-![Visual Design](./Screen2.png)
-![Visual Design](./Screen3.png)
-![Visual Design](./Screen4.png)
-![Visual Design](./Screen5.png)
-![Visual Design](./Screen6.png)
-![Visual Design](./Screen7.png)
+![Visual Design](./FoodSearch1.png)
+![Visual Design](./FoodSearchbylevel.png)
+![Visual Design](./FoodSearchbyrange.png)
+![Visual Design](./FoodSearchResults.png)
+![Visual Design](./Feature5.1.png)
+![Visual Design](./Feature5.2.png)
+![Visual Design](./Feature5.3.png)
+![Visual Design](./Feature5.4.png)
+
 
 
 
