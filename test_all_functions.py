@@ -43,11 +43,6 @@ def test_get_macro_pos():
     assert macro_nutri_type == expected_macro_type, "Macronutrient type did not match expected sorted results"
     assert macro_nutri_value == expected_macro_value, "Macronutrient value did not match expected sorted results"
 
-def test_calculate_bmi():
-    bmi, calorie_intake = calculate_bmi(1.7, 50, 20,'F')
-    assert bmi == 17.30
-    assert calorie_intake ==1301.50
-
 def test_calculate_bmi_Female():
     bmi, calorie_intake = calculate_bmi(1.7, 50, 20, 'F')
     assert bmi == 17.30
@@ -55,7 +50,6 @@ def test_calculate_bmi_Female():
 
 def test_calculate_bmi_Male():
     bmi, calorie_intake = calculate_bmi(1.75, 65, 20,'M')
-    bmi, calorie_intake = calculate_bmi(175, 65, 20,'M')
     assert bmi == 21.22
     assert calorie_intake == 1648.75
 
@@ -89,6 +83,10 @@ def test_calculate_nutrition_zero():
     assert fat == 0
     assert fiber == 0
     assert cal == 0
+
+def test_calculate_nutrition_negative_amount():
+    with pytest.raises(ValueError):
+        calculate_nutrition(0, 0, 0, 0, 0, 0, '-100')
 
 
 
