@@ -24,16 +24,18 @@ def filter_nutrients(df, nutrient_name, nutrient_level, min_value_str, max_value
             nutrient = df[nutrient_name]
             range_filter = (nutrient >= min_value) & (nutrient <= max_value)
             df = df.loc[range_filter]
+            return df
         # If min or max are not provided, filter by level
         elif nutrient_level:
+            nutrient = df[nutrient_name]
             nutrient_max = df[nutrient_name].max()
             low_threshold = nutrient_max * 0.33
             mid_threshold = nutrient_max * 0.66
 
             if nutrient_level == 'Low':
-                df = df[df[nutrient_name]] < low_threshold
+                df = df[nutrient < low_threshold]
             elif nutrient_level == 'Mid':
-                df = (df[df[nutrient_name]] >= low_threshold) & (df[nutrient_name] <= mid_threshold)
+                df = df[(nutrient >= low_threshold) & (nutrient <= mid_threshold)]
             elif nutrient_level == 'High':
-                df = df[df[nutrient_name]] > mid_threshold
-    return df
+                df = df[nutrient > mid_threshold]
+            return df
