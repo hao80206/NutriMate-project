@@ -54,19 +54,23 @@ class CalcFrame(MyFrame1):
         nutrient_level = self.m_radioBox1.GetStringSelection().strip()  # Get selection level
         min_value_str = self.m_textCtrl3.GetValue().strip()  # Get min value as string
         max_value_str = self.m_textCtrl4.GetValue().strip()  # Get max value as string
-        df = self.table.data
+        df = self.df
 
         # Search food
         if keyword:
             loc = search_data(df, keyword)
             df = df[loc]
+            self.update_grid(df)
 
-        #Filter nutrients using update
-        filter_df = filter_nutrients(df, nutrient_name,nutrient_level, min_value_str, max_value_str)
-
-        self.update_grid(filter_df)
+        # Filter nutrients using update
+        if nutrient_name in df.columns:
+            filter_df = filter_nutrients(df, nutrient_name,nutrient_level, min_value_str, max_value_str)
+            self.update_grid(filter_df)
 
     def update_grid(self, df):
+        if not isinstance(df, pd.DataFrame):
+            wx.MessageBox("Data is not in the correct format.", "Error", wx.OK | wx.ICON_ERROR)
+            return  # Exit the method if df is not a DataFrame
         if df.empty:  # If df is empty after filtering
             wx.MessageBox("No items found. Please try again.", "Information", wx.OK | wx.ICON_INFORMATION)
             self.m_grid1.ClearGrid()  # Clear the grid

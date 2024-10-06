@@ -7,9 +7,25 @@ Please provide your GitHub repository link.
 
 You should use your software to prepare an executive summary as outlined below for the five required features.
 
-## 1. [Feature 1 Name]
+## 1. Food Search 
 ### Description  
-Briefly describe what this feature does.
+This feature filters the database looking for a  keyword. As an example if I look for("tortilla"). It searches the food column for the tortilla and retrieves all the food which has tortilla on it.
+
+### Steps
+1. Step-by-step instructions for using this feature.
+2. Add additional steps as needed.
+
+### Screenshots
+Include screenshots for each step demonstrating the use of this feature.  
+![1](./FoodSearch1.png)
+
+![2](./visual_design.png)
+
+---
+
+## 2. Food filter by range
+### Description  
+This feature filters the database looking for food in a nutrient range enter by the consumer. As an example if I look for("tortilla") and nutrient Fat range it between 1 and 3 . It searches the food column for the tortilla and retrieves all the food which meet the criteria.
 
 ### Steps
 1. Step-by-step instructions for using this feature.
@@ -23,25 +39,9 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ---
 
-## 2. [Feature 2 Name]
+## 3. Food filter by level
 ### Description  
-Briefly describe what this feature does.
-
-### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
-
-### Screenshots
-Include screenshots for each step demonstrating the use of this feature.  
-![1](./visual_design.png)
-
-![2](./visual_design.png)
-
----
-
-## 3. [Feature 3 Name]
-### Description  
-Briefly describe what this feature does.
+This feature filters the database looking for food in a nutrient level enter by the consumer. As an example if I look for("tortilla") and for nutrient enter Fat High. It searches the food column for th e tortilla and retrieves all the food which meets criteria.
 
 ### Steps
 1. Step-by-step instructions for using this feature.

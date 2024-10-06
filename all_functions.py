@@ -38,4 +38,5 @@ def filter_nutrients(df, nutrient_name, nutrient_level, min_value_str, max_value
                 df = df[(nutrient >= low_threshold) & (nutrient <= mid_threshold)]
             elif nutrient_level == 'High':
                 df = df[nutrient > mid_threshold]
+
             return df
