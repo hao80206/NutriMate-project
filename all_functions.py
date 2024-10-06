@@ -14,7 +14,9 @@ def search_data(df, keyword):
 
 
 def filter_nutrients(df, nutrient_name, nutrient_level, min_value_str, max_value_str):
+    # Check if nutrient name is provided
     if nutrient_name in df.columns:  # Ensure nutrient name is valid
+        # Check if both min and max values are provided
         if min_value_str and max_value_str:  # Both values are provided
             min_value = float(min_value_str)  # Convert to float
             max_value = float(max_value_str)  # Convert to float
@@ -22,7 +24,7 @@ def filter_nutrients(df, nutrient_name, nutrient_level, min_value_str, max_value
             nutrient = df[nutrient_name]
             range_filter = (nutrient >= min_value) & (nutrient <= max_value)
             df = df.loc[range_filter]
-
+        # If min or max are not provided, filter by level
         elif nutrient_level:
             nutrient_max = df[nutrient_name].max()
             low_threshold = nutrient_max * 0.33

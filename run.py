@@ -1,9 +1,8 @@
 import wx
 import wx.grid
 import pandas as pd
-import re
 
-from all_functions import search_data
+from all_functions import search_data, filter_nutrients
 from template_frame import MyFrame1
 
 
@@ -52,8 +51,9 @@ class CalcFrame(MyFrame1):
     def OnSearch(self, event):
         keyword = self.m_textCtrl1.GetValue()
         nutrient_name = self.m_textCtrl2.GetValue().strip()
-        nutrient_level = self.m_radioBox1.GetStringSelection().strip()
-
+        nutrient_level = self.m_radioBox1.GetStringSelection().strip()  # Get selection level
+        min_value_str = self.m_textCtrl3.GetValue().strip()  # Get min value as string
+        max_value_str = self.m_textCtrl4.GetValue().strip()  # Get max value as string
         df = self.table.data
 
         # Search food
@@ -61,33 +61,19 @@ class CalcFrame(MyFrame1):
             loc = search_data(df, keyword)
             df = df[loc]
 
-        # Check if nutrient name is provided
-        # Check if both min and max values are provided
-            min_value_str = self.m_textCtrl3.GetValue().strip()  # Get min value as string
-            max_value_str = self.m_textCtrl4.GetValue().strip()  # Get max value as string
+        #Filter nutrients using update
+        filter_df = filter_nutrients(df, nutrient_name,nutrient_level, min_value_str, max_value_str)
 
-            # If min or max are not provided, filter by level
-            else:
-                level_filter = None
-                if nutrient_level:  # Check if nutrient level is selected
+        self.update_grid(filter_df)
 
-
-
-
-                    # print(f"nutrient_max: {nutrient_max}, low_threshold: {low_threshold}, mid_threshold: {mid_threshold}")
-
-
-
-                    df = df.loc[level_filter]
-                    # print(f"level_filter ({nutrient_level}): {level_filter.sum()} items found")
-
+    def update_grid(self, df):
         if df.empty:  # If df is empty after filtering
-            self.m_grid1.ClearGrid()  # Clear the grid again to ensure it's empty
-            print("No items found. The grid has been cleared.")
+            wx.MessageBox("No items found. Please try again.", "Information", wx.OK | wx.ICON_INFORMATION)
+            self.m_grid1.ClearGrid()  # Clear the grid
         else:
-            tabl = DataTable(df)
+            new_table = DataTable(df)
             self.m_grid1.ClearGrid()
-            self.m_grid1.SetT able(tabl, takeOwnership=True)
+            self.m_grid1.SetTable(new_table, takeOwnership=True)
             self.m_grid1.AutoSize()
 
 
