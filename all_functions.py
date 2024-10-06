@@ -11,6 +11,7 @@ def search_data(df, keyword):
         else:
             loc.append(False)
     return loc
+#return df['Food'].str.contains(keyword, case=False, na=False)
 
 
 def prepare_macro_nutrient_data(df, selected_food_data):

@@ -262,7 +262,7 @@ Include at least 5 use cases, each corresponding to a specific function.
 This section explains how the NutriMate App is set up and works. A flowchart shows the main parts and how they connect, making it clear how data flows through the system. 
 
 NutriMate App Flowchart:
-![Software Design](./software_design_flowchart.png)
+![Software Design](./Software_design_flowchart.png)
 
 
 ### 3.2	System Components
